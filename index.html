@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="assets/css/venobox.min.css" />
   <link rel="stylesheet" href="assets/css/meanmenu.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/flowchart-enhanced.css" />
 </head>
 
 <body>
@@ -113,15 +114,15 @@
         <div class="contact-info">
           <div class="contact_item">
             <span class="subtitle">Email</span>
-            <div class="text"><a class="link" href="mailto:support@solvior.com">support@solvior.com</a></div>
+            <div class="text"><a class="link" href="mailto:info@kima-academy.com">info@kima-academy.com</a></div>
           </div>
-          <div class="contact_item">
+          <!-- <div class="contact_item">
             <span class="subtitle">Phone</span>
             <div class="text"><a class="link" href="tel:000123456789">(000) 123 456 789</a></div>
-          </div>
+          </div> -->
           <div class="contact_item">
             <span class="subtitle">Location</span>
-            <div class="text">Santa, United State</div>
+            <div class="text">Herzliya, Israel</div>
           </div>
         </div>
       </div>
@@ -149,6 +150,20 @@
 
   <!-- start: Header Area -->
   <header class="tj-header-area header-2 header-7 header-absolute">
+    <style>
+      .tj-header-area .site-logo img {
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+      }
+
+      .tj-header-area .site-logo:hover img {
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+      }
+
+      .hamburger-area .hamburger_logo img {
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+      }
+    </style>
     <div class="header-bottom">
       <div class="container-fluid">
         <div class="row">
@@ -228,205 +243,289 @@
     <!-- start: Kima Academy Hero Section -->
     <style>
       .kima-hero {
-        font-family: inherit;
         position: relative;
-        min-height: 65vh;
-        overflow: hidden;
-      }
-
-      .kima-hero-top {
-        background: #F5F5F5;
-        height: 22vh;
-        min-height: 140px;
-        position: relative;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding-bottom: 0;
-        z-index: 0;
-      }
-
-      .kima-hero-top .kima-watermark {
-        position: absolute;
-        bottom: -0.27em;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: clamp(3rem, 14vw, 10rem);
-        font-weight: 700;
-        color: rgba(0, 0, 0, 0.08);
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-        user-select: none;
-        z-index: 0;
-      }
-
-      .kima-hero-bottom {
-        background: #1A1A1A;
-        min-height: 43vh;
+        min-height: auto;
         display: flex;
         align-items: center;
-        padding: 2.5rem 0;
-        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0f2747 0%, #1a3a5c 50%, #0f2747 100%);
+        padding: 5rem 0 4rem;
+      }
+
+      .kima-hero-bg {
+        position: absolute;
+        inset: 0;
         z-index: 0;
       }
 
-      /* Woman portrait spans both sections, head overlaps KIMA */
-      .kima-hero-portrait {
+      .kima-hero-bg::before {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: min(42vw, 420px);
-        height: 100%;
+        inset: 0;
+        background-image: url('assets/images/hero/kima-hero-professional-leader.webp.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        z-index: 0;
+      }
+
+      .kima-hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right,
+            rgba(15, 39, 71, 0.95) 0%,
+            rgba(15, 39, 71, 0.85) 40%,
+            rgba(15, 39, 71, 0.6) 70%,
+            rgba(15, 39, 71, 0.4) 100%);
+        z-index: 1;
+      }
+
+      .kima-hero-pattern {
+        position: absolute;
+        inset: 0;
         z-index: 2;
-        pointer-events: none;
+        opacity: 0.03;
+        background-image:
+          repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.1) 35px, rgba(255, 255, 255, 0.1) 70px);
       }
 
-      .kima-hero-portrait img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-        display: block;
-      }
-
-      .kima-hero-bottom .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        width: 100%;
+      .kima-hero-container {
         position: relative;
         z-index: 3;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
       }
 
-      .kima-hero-bottom .row {
-        display: flex;
-        flex-wrap: wrap;
+      .kima-hero-content {
+        max-width: 750px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .kima-hero-badge {
+        display: inline-flex;
         align-items: center;
-        margin: 0 -1rem;
-        justify-content: flex-end;
+        gap: 0.5rem;
+        padding: 0.35rem 0.875rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        color: #D1B59C;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease-out 0.2s both;
       }
 
-      .kima-hero-bottom .col-content {
-        flex: 1;
-        padding: 0 1rem;
-        min-width: 280px;
-        max-width: 58%;
+      .kima-hero-badge i {
+        font-size: 1rem;
       }
 
       .kima-hero-title {
         color: #fff;
-        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-        font-weight: 700;
-        line-height: 1.2;
-        margin: 0 0 1.25rem 0;
-        letter-spacing: -0.02em;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.03em;
+        animation: fadeInUp 1s ease-out 0.4s both;
+      }
+
+      .kima-hero-title-highlight {
+        background: linear-gradient(135deg, #D1B59C 0%, #F4E4D7 50%, #D1B59C 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: inline-block;
+      }
+
+      .kima-hero-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+        line-height: 1.6;
+        margin: 0 0 1.75rem 0;
+        max-width: 650px;
+        animation: fadeInUp 1s ease-out 0.6s both;
       }
 
       .kima-hero-buttons {
         display: flex;
         flex-wrap: wrap;
         gap: 0.875rem;
-        margin-top: 1.25rem;
+        animation: fadeInUp 1s ease-out 0.8s both;
       }
 
-      .kima-btn {
-        display: inline-block;
+      .kima-hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
         padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
         border-radius: 6px;
-        transition: opacity 0.2s;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
-      .kima-btn:hover {
-        opacity: 0.9;
+      .kima-hero-btn::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
-      .kima-btn-apply {
-        background: #D1B59C;
+      .kima-hero-btn:hover::before {
+        opacity: 1;
+      }
+
+      .kima-hero-btn i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .kima-hero-btn:hover i {
+        transform: translateX(4px);
+      }
+
+      .kima-btn-primary {
+        background: linear-gradient(135deg, #D1B59C 0%, #C5A382 100%);
         color: #fff;
-        border: none;
+        box-shadow: 0 8px 24px rgba(209, 181, 156, 0.3);
       }
 
-      .kima-btn-schedule {
+      .kima-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(209, 181, 156, 0.4);
+      }
+
+      .kima-btn-secondary {
         background: transparent;
         color: #fff;
-        border: 2px solid rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .kima-btn-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .kima-hero-stats {
+        display: none;
       }
 
       @media (max-width: 991px) {
         .kima-hero {
-          min-height: auto;
+          padding: 4rem 0 3rem;
         }
 
-        .kima-hero-top {
-          height: 18vh;
-          min-height: 100px;
-        }
-
-        .kima-hero-bottom {
-          min-height: auto;
-          padding: 3rem 0;
-        }
-
-        .kima-hero-portrait {
-          display: none;
-        }
-
-        .kima-hero-bottom .col-content {
+        .kima-hero-content {
           max-width: 100%;
-          text-align: center;
         }
 
         .kima-hero-buttons {
-          justify-content: center;
+          justify-content: flex-start;
         }
 
-        .kima-hero-title {
-          font-size: clamp(1.35rem, 5vw, 1.75rem);
+        .kima-hero-stats {
+          gap: 1.5rem;
+          margin-top: 2rem;
+          padding-top: 1.5rem;
+        }
+
+        .kima-hero-stat-number {
+          font-size: 1.75rem;
         }
       }
 
       @media (max-width: 575px) {
-        .kima-hero-top .kima-watermark {
-          font-size: clamp(2.5rem, 12vw, 4rem);
+        .kima-hero {
+          padding: 3rem 0 2.5rem;
         }
 
-        .kima-btn {
-          padding: 0.625rem 1.25rem;
-          font-size: 0.875rem;
+        .kima-hero-container {
+          padding: 0 1.25rem;
+        }
+
+        .kima-hero-badge {
+          font-size: 0.7rem;
+          padding: 0.3rem 0.75rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .kima-hero-title {
+          margin-bottom: 0.875rem;
+        }
+
+        .kima-hero-subtitle {
+          margin-bottom: 1.5rem;
+        }
+
+        .kima-hero-buttons {
+          flex-direction: column;
+          width: 100%;
+          gap: 0.75rem;
+        }
+
+        .kima-hero-btn {
+          width: 100%;
+          justify-content: center;
+          padding: 0.7rem 1.25rem;
         }
       }
     </style>
     <section class="kima-hero">
-      <div class="kima-hero-top">
-        <span class="kima-watermark" aria-hidden="true">KIMA</span>
-      </div>
-      <div class="kima-hero-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-content">
-              <h1 class="kima-hero-title">
-                Kima Academy<br />
-                Program for<br />
-                Entrepreneurial<br />
-                Leadership<br />
-                Management (ELM)
-              </h1>
-              <div class="kima-hero-buttons">
-                <a href="contact.html" class="kima-btn kima-btn-apply">Apply</a>
-                <a href="contact.html" class="kima-btn kima-btn-schedule">Schedule A Call</a>
-              </div>
-            </div>
+      <div class="kima-hero-bg"></div>
+      <div class="kima-hero-pattern"></div>
+      <div class="kima-hero-container">
+        <div class="kima-hero-content">
+          <div class="kima-hero-badge">
+            <i class="tji-award"></i>
+            <span>Transform Your Leadership Journey</span>
+          </div>
+          <h1 class="kima-hero-title">
+            Build <span class="kima-hero-title-highlight">Exceptional Leaders</span>
+            Through Proven ELM Programs
+          </h1>
+          <p class="kima-hero-subtitle">
+            Kima Academy's Entrepreneurial Leadership Management program transforms corporate professionals into
+            visionary leaders. Master Ivy League methodologies, develop strategic thinking, and accelerate your path to
+            executive excellence.
+          </p>
+          <div class="kima-hero-buttons">
+            <a href="contact.html" class="kima-hero-btn kima-btn-primary">
+              <span>Apply Now</span>
+              <i class="tji-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="kima-hero-btn kima-btn-secondary">
+              <span>Schedule A Call</span>
+              <i class="tji-phone"></i>
+            </a>
           </div>
         </div>
-      </div>
-      <!-- Portrait overlaps both sections: head on white over KIMA, body on black -->
-      <div class="kima-hero-portrait">
-        <img src="assets/images/hero/kima-hero-professional-leader.webp.png"
-          alt="Kima Academy - Professional Leadership" />
       </div>
     </section>
     <!-- end: Kima Academy Hero Section -->
@@ -668,15 +767,16 @@
         bottom: -0.2em;
         left: 50%;
         transform: translateX(-50%);
-        font-size: clamp(1.15rem, 3.2vw, 2.25rem);
-        font-weight: 600;
-        color: rgba(0, 97, 255, 0.12);
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        font-weight: 700;
+        color: rgba(0, 97, 255, 0.25);
         letter-spacing: 0.02em;
         white-space: nowrap;
         line-height: 1.25;
         text-align: center;
         width: min(92%, 720px);
         user-select: none;
+        text-transform: uppercase;
       }
 
       .kima-pillars-feature .kima-pillars-quote__content {
@@ -887,6 +987,643 @@
         </div>
       </div>
     </section>
+
+    <!-- start: Kima Program Flowchart -->
+    <section class="kima-program-flowchart section-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="sec-heading h7-section-heading style-4 text-center">
+              <h2 class="sec-title text-anim">What is your next leadership Level?</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="flowchart-container">
+          <!-- Row 1: Nodes 1, 2, 3 -->
+          <div class="flowchart-row">
+            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.1s" data-program-modal="program-modal-1">
+              <span class="node-number">1</span>
+              <h4 class="node-title">Industry Expert to Executive</h4>
+              <p class="node-subtitle">Shift from specialized to executive oversight</p>
+            </div>
+
+            <div class="flowchart-arrow"></div>
+
+            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.2s" data-program-modal="program-modal-2">
+              <span class="node-number">2</span>
+              <h4 class="node-title">Mid-Level Manager to C-Level</h4>
+              <p class="node-subtitle">Move from team to enterprise leadership</p>
+            </div>
+
+            <div class="flowchart-arrow"></div>
+
+            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.3s" data-program-modal="program-modal-3">
+              <span class="node-number">3</span>
+              <h4 class="node-title">C-Level to CEO</h4>
+              <p class="node-subtitle">Advance to ultimate organizational responsibility</p>
+            </div>
+          </div>
+
+          <div class="flowchart-arrow-down"></div>
+
+          <!-- Row 2: Node 4 -->
+          <div class="flowchart-row">
+            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.4s" data-program-modal="program-modal-4">
+              <span class="node-number">4</span>
+              <h4 class="node-title">Founder to Leader</h4>
+              <p class="node-subtitle">Transition from creating to leading</p>
+            </div>
+          </div>
+
+          <div class="flowchart-arrow-down"></div>
+
+          <!-- Row 3: Node 5 (Accelerators) -->
+          <div class="flowchart-row">
+            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.5s" data-program-modal="accelerators-modal">
+              <span class="node-number">5</span>
+              <h4 class="node-title">Accelerators & Partners</h4>
+              <p class="node-subtitle">Join Kima accelerators and partners</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end: Kima Program Flowchart -->
+
+    <!-- Program Modals -->
+    <style>
+      .program-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        overflow-y: auto;
+      }
+
+      .program-modal-overlay.is-open {
+        display: flex;
+      }
+
+      .program-modal {
+        background: #fff;
+        border-radius: 16px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .program-modal-header {
+        padding: 2rem 2rem 1.5rem;
+        border-bottom: 2px solid #e9ecef;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 1;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .program-modal-header h3 {
+        margin: 0;
+        font-size: 1.75rem;
+        color: #0b1220;
+        font-weight: 700;
+      }
+
+      .program-modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #666;
+        padding: 0;
+        line-height: 1;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s;
+      }
+
+      .program-modal-close:hover {
+        background: #f8f9fa;
+        color: #0b1220;
+      }
+
+      .program-modal-body {
+        padding: 2rem;
+      }
+
+      .program-pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .program-pricing-card {
+        background: #ffffff;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 28px 24px;
+        transition: all 0.3s ease;
+      }
+
+      .program-pricing-card:hover {
+        border-color: #0061ff;
+        box-shadow: 0 8px 24px rgba(0, 97, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .program-pricing-card.featured {
+        border-color: #0061ff;
+        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      }
+
+      .program-badge {
+        display: inline-block;
+        background: #0061ff;
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .program-pricing-card h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0b1220;
+        margin: 0 0 12px;
+      }
+
+      .program-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0061ff;
+        margin: 16px 0;
+      }
+
+      .program-price span {
+        font-size: 1rem;
+        color: #5b667a;
+        font-weight: 400;
+      }
+
+      .program-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .program-features li {
+        padding: 8px 0;
+        color: #5b667a;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .program-features li i {
+        color: #0061ff;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .program-apply-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 24px;
+        background: #0061ff;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .program-apply-btn:hover {
+        background: #0051d5;
+        transform: translateY(-1px);
+      }
+
+      /* Accelerators Modal */
+      .accelerators-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .accelerator-logo-card {
+        background: #f8f9fa;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 120px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .accelerator-logo-card:hover {
+        border-color: #0061ff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 97, 255, 0.1);
+      }
+
+      .accelerator-logo-card img {
+        max-width: 100%;
+        max-height: 80px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 767px) {
+        .program-modal {
+          margin: 1rem;
+        }
+
+        .program-modal-header {
+          padding: 1.5rem 1.5rem 1rem;
+        }
+
+        .program-modal-header h3 {
+          font-size: 1.35rem;
+          padding-right: 40px;
+        }
+
+        .program-modal-body {
+          padding: 1.5rem;
+        }
+
+        .program-pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .accelerators-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          gap: 16px;
+        }
+      }
+    </style>
+
+    <!-- Modal 1: Industry Expert to Executive -->
+    <div id="program-modal-1" class="program-modal-overlay">
+      <div class="program-modal">
+        <div class="program-modal-header">
+          <h3>Industry Expert to Executive</h3>
+          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="program-modal-body">
+          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Shift from specialized expertise to
+            executive oversight</p>
+
+          <!-- What You'll Get -->
+          <div class="program-benefits-section">
+            <h4>What You'll Get</h4>
+            <div class="program-benefits-grid">
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-performance"></i>
+                </div>
+                <h5>Intensive Leadership Sessions</h5>
+                <p>6 high-impact sessions at Herzliya</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-strategic"></i>
+                </div>
+                <h5>Personal Mentoring</h5>
+                <p>8 individual trainings designed for you</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-results"></i>
+                </div>
+                <h5>LEM Certificate</h5>
+                <p>Join the KIMA LEM Leadership network</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-executive"></i>
+                </div>
+                <h5>Executive Presence</h5>
+                <p>Build strategic oversight frameworks</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-pricing-grid">
+            <div class="program-pricing-card">
+              <h4>Industry Expert to Executive</h4>
+              <div class="program-price">$899 <span>/ 6 weeks</span></div>
+              <ul class="program-features">
+                <li><i class="tji-double-check"></i> 6x Intensive Coaching Sessions</li>
+                <li><i class="tji-double-check"></i> Executive Presence & Communication</li>
+                <li><i class="tji-double-check"></i> Strategic Oversight Frameworks</li>
+                <li><i class="tji-double-check"></i> Chat support available</li>
+              </ul>
+              <a href="contact.html" class="program-apply-btn">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Mid-Level Manager to C-Level -->
+    <div id="program-modal-2" class="program-modal-overlay">
+      <div class="program-modal">
+        <div class="program-modal-header">
+          <h3>Mid-Level Manager to C-Level</h3>
+          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="program-modal-body">
+          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Move from team management to enterprise
+            leadership</p>
+
+          <!-- What You'll Get -->
+          <div class="program-benefits-section">
+            <h4>What You'll Get</h4>
+            <div class="program-benefits-grid">
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-performance"></i>
+                </div>
+                <h5>Intensive Leadership Sessions</h5>
+                <p>8 high-impact sessions at Herzliya</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-strategic"></i>
+                </div>
+                <h5>Personal Mentoring</h5>
+                <p>8 individual trainings for your challenges</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-results"></i>
+                </div>
+                <h5>LEM Certificate</h5>
+                <p>Join the KIMA LEM Leadership network</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-leadership"></i>
+                </div>
+                <h5>Enterprise Strategy</h5>
+                <p>Full purpose discovery mapping</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-pricing-grid">
+            <div class="program-pricing-card featured">
+              <span class="program-badge">Most Popular</span>
+              <h4>Mid-Level Manager to C-Level</h4>
+              <div class="program-price">$749 <span>/ 6 weeks</span></div>
+              <ul class="program-features">
+                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
+                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
+                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
+                <li><i class="tji-double-check"></i> Chat support available</li>
+                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
+              </ul>
+              <a href="contact.html" class="program-apply-btn">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3: C-Level to CEO -->
+    <div id="program-modal-3" class="program-modal-overlay">
+      <div class="program-modal">
+        <div class="program-modal-header">
+          <h3>C-Level to CEO</h3>
+          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="program-modal-body">
+          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Advance to ultimate organizational
+            responsibility</p>
+
+          <!-- What You'll Get -->
+          <div class="program-benefits-section">
+            <h4>What You'll Get</h4>
+            <div class="program-benefits-grid">
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-performance"></i>
+                </div>
+                <h5>Intensive Leadership Sessions</h5>
+                <p>8 high-impact executive sessions</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-strategic"></i>
+                </div>
+                <h5>Personal Mentoring</h5>
+                <p>Strategic C-suite coaching</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-results"></i>
+                </div>
+                <h5>CEO Certification</h5>
+                <p>Executive LEM certification</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-executive"></i>
+                </div>
+                <h5>C-Suite Strategy</h5>
+                <p>Organizational transformation planning</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-pricing-grid">
+            <div class="program-pricing-card">
+              <h4>C-Level to CEO</h4>
+              <div class="program-price">$1,199 <span>/ 8 weeks</span></div>
+              <ul class="program-features">
+                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
+                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
+                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
+                <li><i class="tji-double-check"></i> Chat support available</li>
+                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
+              </ul>
+              <a href="contact.html" class="program-apply-btn">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Founder to Leader -->
+    <div id="program-modal-4" class="program-modal-overlay">
+      <div class="program-modal">
+        <div class="program-modal-header">
+          <h3>Founder to Leader - Premium</h3>
+          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="program-modal-body">
+          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Transition from creating to leading</p>
+
+          <!-- What You'll Get -->
+          <div class="program-benefits-section">
+            <h4>What You'll Get</h4>
+            <div class="program-benefits-grid">
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-performance"></i>
+                </div>
+                <h5>Intensive Leadership Sessions</h5>
+                <p>5-8 high-impact coaching sessions</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-strategic"></i>
+                </div>
+                <h5>Personal Mentoring</h5>
+                <p>Founder-specific guidance & support</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-results"></i>
+                </div>
+                <h5>LEM Certificate</h5>
+                <p>Leadership credibility & network access</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-personalization"></i>
+                </div>
+                <h5>Leadership Toolkit</h5>
+                <p>Life decision framework & tools</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-pricing-grid">
+            <div class="program-pricing-card">
+              <h4>Founder to Leader - Premium</h4>
+              <div class="program-price">$699 <span>/ 6 weeks</span></div>
+              <ul class="program-features">
+                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
+                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
+                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
+                <li><i class="tji-double-check"></i> Chat support available</li>
+                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
+                <li><i class="tji-double-check"></i> Bonus: Life Decision Framework Toolkit</li>
+              </ul>
+              <a href="contact.html" class="program-apply-btn">Apply Now</a>
+            </div>
+            <div class="program-pricing-card">
+              <h4>Founder to Leader - Standard</h4>
+              <div class="program-price">$649 <span>/ 5 weeks</span></div>
+              <ul class="program-features">
+                <li><i class="tji-double-check"></i> 5x Intensive Coaching Sessions</li>
+                <li><i class="tji-double-check"></i> Purpose Discovery Workshop</li>
+                <li><i class="tji-double-check"></i> Leadership Transition Planning</li>
+                <li><i class="tji-double-check"></i> Email support</li>
+              </ul>
+              <a href="contact.html" class="program-apply-btn">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: Accelerators & Partners -->
+    <div id="accelerators-modal" class="program-modal-overlay">
+      <div class="program-modal">
+        <div class="program-modal-header">
+          <h3>Join Kima Accelerators & Partners</h3>
+          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="program-modal-body">
+          <p style="font-size: 1.05rem; color: #5b667a;">Connect with our network of world-class accelerators and
+            strategic partners to amplify your leadership journey.</p>
+
+          <!-- What You'll Get -->
+          <div class="program-benefits-section">
+            <h4>Partnership Benefits</h4>
+            <div class="program-benefits-grid">
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-strategic"></i>
+                </div>
+                <h5>Network Access</h5>
+                <p>Connect with industry leaders</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-results"></i>
+                </div>
+                <h5>Funding Opportunities</h5>
+                <p>Access to capital & investors</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-performance"></i>
+                </div>
+                <h5>Mentorship</h5>
+                <p>Guidance from successful founders</p>
+              </div>
+              <div class="program-benefit-item">
+                <div class="program-benefit-icon">
+                  <i class="tji-business"></i>
+                </div>
+                <h5>Resources</h5>
+                <p>Tools, training & support</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="margin: 32px 0 0; font-size: 1.25rem; color: #0b1220;">Our Partner Network</h4>
+          <div class="accelerators-grid" id="accelerators-logos">
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-1.png" alt="Partner 1">
+            </a>
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-2.png" alt="Partner 2">
+            </a>
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-3.png" alt="Partner 3">
+            </a>
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-4.png" alt="Partner 4">
+            </a>
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-5.png" alt="Partner 5">
+            </a>
+            <a href="#" class="accelerator-logo-card" target="_blank">
+              <img src="assets/images/partners/accelerator-logo-6.png" alt="Partner 6">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Program Modals -->
 
     <div id="modal-module1" class="kima-modal-overlay" aria-hidden="true">
       <div class="kima-modal">
@@ -1212,9 +1949,6 @@
               <div class="service-style-3 wow fadeInUp" data-wow-delay="0.25s">
                 <div class="service-title">
                   <div class="service-icon"><span><i class="tji-executive"></i></span></div>
-                  <h4 class="title">Preparation for the Highest <br> Executive Level</h4>
-                </div>
-                <div class="service-right">
                   <div class="desc">
                     <p class="mb-0">Gaining the confidence, experience, and essential network for success at the
                       executive management level, whether launching a new project or expanding an existing one.</p>
@@ -1256,884 +1990,6 @@
       }
     </style>
     <!-- end: Accelerate Your Ascent -->
-
-    <!-- (removed) About Section -->
-
-
-    <!-- start: Brand Section -->
-    <section class="tj-brand section-space" data-bg-image="assets/images/brand/h7-brand-bg.png">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-
-          </div>
-        </div>
-        <div class="row align-items-center flex-column-reverse flex-lg-row ">
-          <div class="col-12 col-lg-6 col-xl-8">
-            <div class="tj-brand-inner wow fadeInUp" data-wow-delay="0.3s">
-
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/brand-thumb-1.png" alt="Brand">
-                </a>
-              </div>
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/h7-brand-thumb-2.png" alt="Brand">
-                </a>
-              </div>
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/h7-brand-thumb-3.png" alt="Brand">
-                </a>
-              </div>
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/h7-brand-thumb-4.png" alt="Brand">
-                </a>
-              </div>
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/h7-brand-thumb-5.png" alt="Brand">
-                </a>
-              </div>
-              <div class="brand-logo">
-                <a href="#">
-                  <img src="assets/images/brand/h7-brand-thumb-6.png" alt="Brand">
-                </a>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-12 col-lg-6 col-xl-4">
-            <div class="sec-heading h7-section-heading ">
-              <h2 class="sec-title text-anim">Join over <span>1000+</span> companies with
-                Solvior</h2>
-
-              <a class="service-button text-btn" href="contact.html">
-                Join us now <i class="tji-angle-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end: Brand Section -->
-
-
-
-    <!-- start: Case Study Section -->
-    <section class="h7-project section-space">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="sec-heading h7-section-heading style-4">
-              <span class="sub-title wow fadeInUp" data-wow-delay="0.1s"> OUR CASE STUDIES </span>
-              <h2 class="sec-title text-anim">Explore our outstanding client projects</h2>
-            </div>
-            <div class="h7-project-inner">
-
-              <div class="h7-case-study-slider-wrapper">
-                <div class="h7-case-study-slider swiper swiper-container">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-1.webp.png">
-                        <div class="case-study-content">
-
-
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-2.webp.png">
-                        <div class="case-study-content">
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-3.webp.png">
-                        <div class="case-study-content">
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-1.webp.png">
-                        <div class="case-study-content">
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-2.webp.png">
-                        <div class="case-study-content">
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide h5-case-study-item">
-                      <div class="h5-case-study-item-inner"
-                        data-bg-image="./assets/images/project/kima-case-study-3.webp.png">
-                        <div class="case-study-content">
-                          <div class="case-study-text">
-                            <div class="title">
-                              <h3><a href="project-details.html">Innovate consultancy</a></h3>
-                              <ul class="category">
-                                <li><a href="#">Strategy</a></li>
-                                <li><a href="#">Growth</a></li>
-                              </ul>
-                            </div>
-
-
-                            <a class="icon-btn" href="project-details.html">
-                              <i class="tji-arrow-right"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="swiper_pagination"></div>
-                </div>
-              </div>
-              <div class="tj-project-nav tj-project-nav-prev"> <i class="tji-arrow-left"></i></div>
-              <div class="tj-project-nav tj-project-nav-next"> <i class="tji-arrow-right"></i></div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end: Case Study Section -->
-
-
-    <!-- start: process Section -->
-    <section id="tj-process" class="h7-process  section-space">
-      <div class="container">
-        <div class="row rg-50">
-          <div class="col-xl-5 col-lg-5">
-
-            <div class="process-left">
-              <div class="sec-heading style-3">
-                <span class="sub-title wow fadeInUp" data-wow-delay="0.2s">HOW IT’S WORK</span>
-                <h2 class="sec-title text-anim">Three steps transform for our business</h2>
-
-              </div>
-              <div class="case-btn wow fadeInUp" data-wow-delay="0.4s">
-                <a href="contact.html" class="tj-primary-btn">
-                  <div class="btn_inner">
-                    <div class="btn_icon">
-                      <span>
-                        <i class="tji-arrow-right"></i>
-                        <i class="tji-arrow-right"></i>
-                      </span>
-                    </div>
-                    <div class="btn_text">
-                      <span>Know More</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <!-- banner img -->
-              <div class="process-banner d-none d-lg-block wow fadeInUp" data-wow-delay=".5s">
-                <div class="process-banner-bg">
-
-                </div>
-                <img src="./assets/images/process/h7-banner.webp" alt="">
-                <div class="about-circle h7-process-circle">
-                  <div class="circle-wrap">
-                    <img class="rotate-image" src="assets/images/shapes/h5-about-circle.png" alt="image">
-                    <span class="logo-icon"><img src="assets/images/icons/logo-icon.svg" alt=""></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-xl-7 col-lg-7">
-            <div class="row ">
-              <div class="col-12">
-                <div class="process-inner">
-                  <div class="process-line">
-                    <div class="process-line-active"></div>
-                  </div>
-                  <div class="process-item style-4 active wow fadeInUp" data-wow-delay=".3s">
-                    <div class="process-index">
-                      <span>01 </span>
-                    </div>
-                    <div class="process-content">
-                      <h5 class="title">Diagnose & discover</h5>
-                      <div class="desc">
-                        <p>We dive deep into your business—uncovering strengths, bottlenecks, and hidden opportunities
-                          through workshops, interviews, and data audits.
-                        </p>
-                      </div>
-                      <a class="service-button text-btn" href="service-details.html">
-                        Book discovery call <i class="tji-angle-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="process-item style-4  wow fadeInUp" data-wow-delay=".4s">
-                    <div class="process-index">
-                      <span>02 </span>
-                    </div>
-                    <div class="process-content">
-                      <h5 class="title">Strategize & design </h5>
-                      <div class="desc">
-                        <p>Clear picture of where you are, we build a tailored strategy aligned with your goals—whether
-                          it’s scaling operations, fixing inefficiencies, or pivoting to new markets.
-                        </p>
-                      </div>
-                      <a class="service-button text-btn" href="service-details.html">
-                        Explore map <i class="tji-angle-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="process-item style-4  wow fadeInUp" data-wow-delay=".5s">
-                    <div class="process-index">
-                      <span>03 </span>
-                    </div>
-                    <div class="process-content">
-                      <h5 class="title">Execute & Elevate</h5>
-                      <div class="desc">
-                        <p>Roll up our sleeves and work side-by-side with your team to implement the strategy. From
-                          hands-on support to performance tracking—we’re in it with you.
-                        </p>
-                      </div>
-                      <a class="service-button text-btn" href="service-details.html">
-                        Book consultation <i class="tji-angle-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- banner img -->
-                <div class="process-banner d-block d-lg-none">
-                  <div class="process-banner-bg"></div>
-                  <img src="./assets/images/process/h7-banner.webp" alt="">
-                  <div class="about-circle h7-process-circle">
-                    <div class="circle-wrap">
-                      <img class="rotate-image" src="assets/images/shapes/h5-about-circle.png" alt="image">
-                      <span class="logo-icon"><img src="assets/images/icons/logo-icon.svg" alt=""></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <!-- end: Case Study Section -->
-
-    <!-- start: Testimoniasl Section -->
-    <section class="h7-testimonial section-space">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-
-            <div class="sec-heading h7-section-heading style-4">
-              <span class="sub-title wow fadeInUp" data-wow-delay="0.3s">CLIENTS FEEDBACK</span>
-              <h2 class="sec-title text-anim">Feedback that fuels us</h2>
-            </div>
-
-
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="h7-testimonial-wrap wow fadeInUp" data-wow-delay="0.3s">
-
-              <div class="testimonial-style-2 h7-testimonial-single ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Natalie Harrington<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/kima-testimonial-1.webp.png" alt="Testimonial">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Natalie Harrington</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="testimonial-style-2 h7-testimonial-single active ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Burdee Nicolas<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/kima-testimonial-2.webp.png" alt="Testimonial">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Burdee Nicolas</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="testimonial-style-2 h7-testimonial-single ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Michael Desouza<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/h1-test-2.webp" alt="Images">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Michael Desouza</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="testimonial-style-2 h7-testimonial-single ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Caroline Dueont<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/h3-test-1.png" alt="Images">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Caroline Dueont</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="testimonial-style-2 h7-testimonial-single ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Lauren Sanders<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/h1-test-2.webp" alt="Images">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Lauren Sanders</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="testimonial-style-2 h7-testimonial-single ">
-                <div class="testimonial-content">
-                  <div class="h7-testimonial-title">
-                    <h4 class="title">Brandon Cooper<i class="tji-plus"></i></h4>
-                  </div>
-
-                  <div class="testimonial-content-inner">
-                    <div class="testimonial-quote">
-                      <i class="tji-right-quote"></i>
-                    </div>
-                    <div class="desc">
-                      <p>Partnering with solvior has been a transformative experience for
-                        our organization. Their expert guidance through our market expansion strategy was
-                        invaluable. They helped us navigate complex regulatory environments and develop a
-                        clear, actionable plan that has led to successful</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <div class="author-images">
-                        <img src="assets/images/testimonial/h3-test-1.png" alt="Images">
-                      </div>
-                      <div class="author-text">
-                        <div class="testimonial-rating">
-                          <div class="star-fill">
-                            <div class="star-ratings">
-                              <div class="fill-ratings" style="width: 73%">
-                                <span>★★★★★</span>
-                              </div>
-                              <div class="empty-ratings">
-                                <span>★★★★★</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="title">Brandon Cooper</h4>
-                        <span class="designation">Business owner</span>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- end: Testimonials Section -->
-
-    <!-- start: Marquee Section -->
-    <section class="tj-marquee-section">
-      <div class="marquee-slider-wrapper">
-        <div class="swiper marquee-slider">
-          <div class="swiper-wrapper marquee-wrapper">
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Passion and progress</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Founders and vision</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Growth and impact</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Team and values</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Innovation and future</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Success and impact</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Passion and progress</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Founders and vision</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Growth and impact</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Team and values</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Innovation and future</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-            <div class="swiper-slide marquee-item">
-              <div class="marquee-title">
-                <h3 class="text">Success and impact</h3>
-              </div>
-              <div class="marquee-icons">
-                <img src="assets/images/icons/marquee-icon.svg" alt="Icons">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end: Marquee Section -->
-
-    <!-- start: Blog Section -->
-    <section class="tj-blog-section h7-blog">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="sec-heading h7-section-heading style-4">
-              <div class="sec-text">
-                <span class="sub-title wow fadeInDown" data-wow-delay="0.1s">Latest news</span>
-                <h2 class="sec-title text-anim">Tip and tricks for success</h2>
-              </div>
-              <div class="blog-button d-none d-lg-inline-flex wow fadeInDown" data-wow-delay="0.3s">
-                <a href="blog.html" class="tj-primary-btn">
-                  <div class="btn_inner">
-                    <div class="btn_icon">
-                      <span>
-                        <i class="tji-arrow-right"></i>
-                        <i class="tji-arrow-right"></i>
-                      </span>
-                    </div>
-                    <div class="btn_text">
-                      <span>Explore more</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="blog-wrapper h7-blog-wrapper">
-
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                <div class="blog-images hover:shine">
-                  <a href="blog-details.html">
-                    <img src="assets/images/blog/kima-blog-leadership-1.webp.png" alt="Leadership">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <ul>
-                      <li class="category"><a href="blog-details.html">Business</a></li>
-                      <li>June 30, 2024</li>
-
-                    </ul>
-                  </div>
-                  <h4 class="blog-title">
-                    <a href="blog-details.html">Innovative solutions for business success from now</a>
-                  </h4>
-
-                  <div class="desc">
-                    Specifics challenges, such as stagnating our growth, operational inefficiencies.
-                  </div>
-
-                </div>
-              </div>
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                <div class="blog-images hover:shine">
-                  <a href="blog-details.html">
-                    <img src="assets/images/blog/kima-blog-entrepreneurship-2.webp.png" alt="Entrepreneurship">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <ul>
-                      <li class="category"><a href="blog-details.html">Business</a></li>
-                      <li>June 30, 2024</li>
-
-                    </ul>
-                  </div>
-                  <h4 class="blog-title">
-                    <a href="blog-details.html">Innovative solutions for business success from now</a>
-                  </h4>
-
-                  <div class="desc">
-                    Specifics challenges, such as stagnating our growth, operational inefficiencies.
-                  </div>
-
-                </div>
-              </div>
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.5s">
-                <div class="blog-images hover:shine">
-                  <a href="blog-details.html">
-                    <img src="assets/images/blog/kima-blog-management-3.webp.png" alt="Management">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <ul>
-                      <li class="category"><a href="blog-details.html">Innovations</a></li>
-                      <li>June 30, 2024</li>
-
-                    </ul>
-                  </div>
-                  <h4 class="blog-title">
-                    <a href="blog-details.html">Harnessing digital transformation a roadmap for businesses</a>
-                  </h4>
-                  <div class="desc">
-                    Specifics challenges, such as stagnating our growth, operational inefficiencies.
-                  </div>
-
-                </div>
-              </div>
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.7s">
-                <div class="blog-images hover:shine">
-                  <a href="blog-details.html">
-                    <img src="assets/images/blog/kima-blog-impact-4.webp.png" alt="Impact">
-                  </a>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <ul>
-                      <li class="category"><a href="blog-details.html">Management</a></li>
-                      <li>June 30, 2024</li>
-
-                    </ul>
-                  </div>
-                  <h4 class="blog-title">
-                    <a href="blog-details.html">Mastering change management kye lessons for businesses</a>
-                  </h4>
-                  <div class="desc">
-                    Specifics challenges, such as stagnating our growth, operational inefficiencies.
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="blog-button d-lg-none text-center wow fadeInUp" data-wow-delay="0.9s">
-              <a href="blog.html" class="tj-primary-btn">
-                <div class="btn-text"><span>Explore more</span></div>
-                <span class="btn-icon"><i class="tji-arrow-right"></i><i class="tji-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end: Blog Section -->
 
     <!-- start: Register for ELM-Mini Program -->
     <section class="section-space kima-register-elm">
@@ -2275,499 +2131,6 @@
       }
     </style>
     <!-- end: Register for ELM-Mini Program -->
-
-    <!-- start: Kima Program Flowchart -->
-    <section class="kima-program-flowchart section-space">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="sec-heading h7-section-heading style-4 text-center">
-              <h2 class="sec-title text-anim">What is your next leadership Level?</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="flowchart-container">
-          <!-- Row 1: Nodes 1, 2, 3 -->
-          <div class="flowchart-row">
-            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.1s" data-program-modal="program-modal-1">
-              <span class="node-number">1</span>
-              <h4 class="node-title">Industry Expert to Executive</h4>
-              <p class="node-subtitle">Shift from specialized to executive oversight</p>
-            </div>
-
-            <div class="flowchart-arrow"></div>
-
-            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.2s" data-program-modal="program-modal-2">
-              <span class="node-number">2</span>
-              <h4 class="node-title">Mid-Level Manager to C-Level</h4>
-              <p class="node-subtitle">Move from team to enterprise leadership</p>
-            </div>
-
-            <div class="flowchart-arrow"></div>
-
-            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.3s" data-program-modal="program-modal-3">
-              <span class="node-number">3</span>
-              <h4 class="node-title">C-Level to CEO</h4>
-              <p class="node-subtitle">Advance to ultimate organizational responsibility</p>
-            </div>
-          </div>
-
-          <div class="flowchart-arrow-down"></div>
-
-          <!-- Row 2: Node 4 -->
-          <div class="flowchart-row">
-            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.4s" data-program-modal="program-modal-4">
-              <span class="node-number">4</span>
-              <h4 class="node-title">Founder to Leader</h4>
-              <p class="node-subtitle">Transition from creating to leading</p>
-            </div>
-          </div>
-
-          <!-- Multi-track Approach Card -->
-          <div class="multitrack-card-wrapper wow fadeInUp" data-wow-delay="0.5s">
-            <h3>A multi-track Approach to Leadership Excellence</h3>
-            <div class="multitrack-grid">
-              <div class="multitrack-item">
-                <div class="multitrack-icon">
-                  <i class="tji-performance"></i>
-                </div>
-                <h5>Intensive Leadership Sessions</h5>
-                <p>6 high-impact sessions at Hertzlia, in the heart of the High tech center.</p>
-              </div>
-              <div class="multitrack-item">
-                <div class="multitrack-icon">
-                  <i class="tji-strategic"></i>
-                </div>
-                <h5>Personal Mentoring Sessions</h5>
-                <p>8 Individual Trainings specifically designed for your unique professional challenges and aspirations.
-                </p>
-              </div>
-              <div class="multitrack-item">
-                <div class="multitrack-icon">
-                  <i class="tji-results"></i>
-                </div>
-                <h5>LEM Certificate</h5>
-                <p>Become LEM certified and a member of the KIMA LEM Leadership network.</p>
-              </div>
-              <div class="multitrack-item">
-                <div class="multitrack-icon">
-                  <i class="tji-personalization"></i>
-                </div>
-                <h5>Personal Podcast</h5>
-                <p>Optional: Personal podcast recording that expresses your leadership identity, to be used as a
-                  professional tool in your resume storytelling.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flowchart-arrow-down"></div>
-
-          <!-- Row 3: Node 5 (Accelerators) -->
-          <div class="flowchart-row">
-            <div class="flowchart-node wow fadeInUp" data-wow-delay="0.6s" data-program-modal="accelerators-modal">
-              <span class="node-number">5</span>
-              <h4 class="node-title">Accelerators & Partners</h4>
-              <p class="node-subtitle">Join Kima accelerators and partners</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end: Kima Program Flowchart -->
-
-    <!-- Program Modals -->
-    <style>
-      .program-modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        overflow-y: auto;
-      }
-
-      .program-modal-overlay.is-open {
-        display: flex;
-      }
-
-      .program-modal {
-        background: #fff;
-        border-radius: 16px;
-        max-width: 900px;
-        width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        position: relative;
-      }
-
-      .program-modal-header {
-        padding: 2rem 2rem 1.5rem;
-        border-bottom: 2px solid #e9ecef;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        z-index: 1;
-        border-radius: 16px 16px 0 0;
-      }
-
-      .program-modal-header h3 {
-        margin: 0;
-        font-size: 1.75rem;
-        color: #0b1220;
-        font-weight: 700;
-      }
-
-      .program-modal-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        color: #666;
-        padding: 0;
-        line-height: 1;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.2s;
-      }
-
-      .program-modal-close:hover {
-        background: #f8f9fa;
-        color: #0b1220;
-      }
-
-      .program-modal-body {
-        padding: 2rem;
-      }
-
-      .program-pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-        margin-top: 24px;
-      }
-
-      .program-pricing-card {
-        background: #ffffff;
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 28px 24px;
-        transition: all 0.3s ease;
-      }
-
-      .program-pricing-card:hover {
-        border-color: #0061ff;
-        box-shadow: 0 8px 24px rgba(0, 97, 255, 0.1);
-        transform: translateY(-2px);
-      }
-
-      .program-pricing-card.featured {
-        border-color: #0061ff;
-        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-      }
-
-      .program-badge {
-        display: inline-block;
-        background: #0061ff;
-        color: #fff;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-bottom: 12px;
-      }
-
-      .program-pricing-card h4 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #0b1220;
-        margin: 0 0 12px;
-      }
-
-      .program-price {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #0061ff;
-        margin: 16px 0;
-      }
-
-      .program-price span {
-        font-size: 1rem;
-        color: #5b667a;
-        font-weight: 400;
-      }
-
-      .program-features {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-      }
-
-      .program-features li {
-        padding: 8px 0;
-        color: #5b667a;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .program-features li i {
-        color: #0061ff;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .program-apply-btn {
-        display: inline-block;
-        width: 100%;
-        padding: 12px 24px;
-        background: #0061ff;
-        color: #fff;
-        text-align: center;
-        border-radius: 8px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-
-      .program-apply-btn:hover {
-        background: #0051d5;
-        transform: translateY(-1px);
-      }
-
-      /* Accelerators Modal */
-      .accelerators-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 24px;
-        margin-top: 24px;
-      }
-
-      .accelerator-logo-card {
-        background: #f8f9fa;
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 120px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .accelerator-logo-card:hover {
-        border-color: #0061ff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 97, 255, 0.1);
-      }
-
-      .accelerator-logo-card img {
-        max-width: 100%;
-        max-height: 80px;
-        object-fit: contain;
-      }
-
-      @media (max-width: 767px) {
-        .program-modal {
-          margin: 1rem;
-        }
-
-        .program-modal-header {
-          padding: 1.5rem 1.5rem 1rem;
-        }
-
-        .program-modal-header h3 {
-          font-size: 1.35rem;
-          padding-right: 40px;
-        }
-
-        .program-modal-body {
-          padding: 1.5rem;
-        }
-
-        .program-pricing-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .accelerators-grid {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          gap: 16px;
-        }
-      }
-    </style>
-
-    <!-- Modal 1: Industry Expert to Executive -->
-    <div id="program-modal-1" class="program-modal-overlay">
-      <div class="program-modal">
-        <div class="program-modal-header">
-          <h3>Industry Expert to Executive</h3>
-          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="program-modal-body">
-          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Shift from specialized expertise to
-            executive oversight</p>
-          <div class="program-pricing-grid">
-            <div class="program-pricing-card">
-              <h4>Industry Expert to Executive</h4>
-              <div class="program-price">$899 <span>/ 6 weeks</span></div>
-              <ul class="program-features">
-                <li><i class="tji-double-check"></i> 6x Intensive Coaching Sessions</li>
-                <li><i class="tji-double-check"></i> Executive Presence & Communication</li>
-                <li><i class="tji-double-check"></i> Strategic Oversight Frameworks</li>
-                <li><i class="tji-double-check"></i> Chat support available</li>
-              </ul>
-              <a href="contact.html" class="program-apply-btn">Apply Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2: Mid-Level Manager to C-Level -->
-    <div id="program-modal-2" class="program-modal-overlay">
-      <div class="program-modal">
-        <div class="program-modal-header">
-          <h3>Mid-Level Manager to C-Level</h3>
-          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="program-modal-body">
-          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Move from team management to enterprise
-            leadership</p>
-          <div class="program-pricing-grid">
-            <div class="program-pricing-card featured">
-              <span class="program-badge">Most Popular</span>
-              <h4>Mid-Level Manager to C-Level</h4>
-              <div class="program-price">$749 <span>/ 6 weeks</span></div>
-              <ul class="program-features">
-                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
-                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
-                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
-                <li><i class="tji-double-check"></i> Chat support available</li>
-                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
-              </ul>
-              <a href="contact.html" class="program-apply-btn">Apply Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3: C-Level to CEO -->
-    <div id="program-modal-3" class="program-modal-overlay">
-      <div class="program-modal">
-        <div class="program-modal-header">
-          <h3>C-Level to CEO</h3>
-          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="program-modal-body">
-          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Advance to ultimate organizational
-            responsibility</p>
-          <div class="program-pricing-grid">
-            <div class="program-pricing-card">
-              <h4>C-Level to CEO</h4>
-              <div class="program-price">$1,199 <span>/ 8 weeks</span></div>
-              <ul class="program-features">
-                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
-                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
-                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
-                <li><i class="tji-double-check"></i> Chat support available</li>
-                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
-              </ul>
-              <a href="contact.html" class="program-apply-btn">Apply Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4: Founder to Leader -->
-    <div id="program-modal-4" class="program-modal-overlay">
-      <div class="program-modal">
-        <div class="program-modal-header">
-          <h3>Founder to Leader - Premium</h3>
-          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="program-modal-body">
-          <p style="font-size: 1.05rem; color: #5b667a; margin-bottom: 8px;">Transition from creating to leading</p>
-          <div class="program-pricing-grid">
-            <div class="program-pricing-card">
-              <h4>Founder to Leader - Premium</h4>
-              <div class="program-price">$699 <span>/ 6 weeks</span></div>
-              <ul class="program-features">
-                <li><i class="tji-double-check"></i> 8x Intensive Coaching Sessions</li>
-                <li><i class="tji-double-check"></i> Full Purpose Discovery Mapping</li>
-                <li><i class="tji-double-check"></i> Career Strategy & Transition Planning</li>
-                <li><i class="tji-double-check"></i> Chat support available</li>
-                <li><i class="tji-double-check"></i> Personalized weekly progress reports</li>
-                <li><i class="tji-double-check"></i> Bonus: Life Decision Framework Toolkit</li>
-              </ul>
-              <a href="contact.html" class="program-apply-btn">Apply Now</a>
-            </div>
-            <div class="program-pricing-card">
-              <h4>Founder to Leader - Standard</h4>
-              <div class="program-price">$649 <span>/ 5 weeks</span></div>
-              <ul class="program-features">
-                <li><i class="tji-double-check"></i> 5x Intensive Coaching Sessions</li>
-                <li><i class="tji-double-check"></i> Purpose Discovery Workshop</li>
-                <li><i class="tji-double-check"></i> Leadership Transition Planning</li>
-                <li><i class="tji-double-check"></i> Email support</li>
-              </ul>
-              <a href="contact.html" class="program-apply-btn">Apply Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5: Accelerators & Partners -->
-    <div id="accelerators-modal" class="program-modal-overlay">
-      <div class="program-modal">
-        <div class="program-modal-header">
-          <h3>Join Kima Accelerators & Partners</h3>
-          <button type="button" class="program-modal-close" aria-label="Close">&times;</button>
-        </div>
-        <div class="program-modal-body">
-          <p style="font-size: 1.05rem; color: #5b667a;">Connect with our network of world-class accelerators and
-            strategic partners to amplify your leadership journey.</p>
-          <div class="accelerators-grid" id="accelerators-logos">
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-1.png" alt="Partner 1">
-            </a>
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-2.png" alt="Partner 2">
-            </a>
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-3.png" alt="Partner 3">
-            </a>
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-4.png" alt="Partner 4">
-            </a>
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-5.png" alt="Partner 5">
-            </a>
-            <a href="#" class="accelerator-logo-card" target="_blank">
-              <img src="assets/images/partners/accelerator-logo-6.png" alt="Partner 6">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Program Modals -->
 
     <!-- start: Faq Section -->
     <section class="h7-faq section-space">
@@ -2930,7 +2293,7 @@
                 <div class="infos-item">
                   <div class="infos-item-left">
                     <p>Lets work together?</p>
-                    <h3 class="info-title">Call Solvior Now</h3>
+                    <h3 class="info-title">Call Kima Academy Now</h3>
                   </div>
                   <div> <a class="info-call" href="tel:1009544-7818"><i class="tji-phone"></i></a></div>
                 </div>
@@ -3047,7 +2410,7 @@
             <div class="copyright-content-area">
 
               <div class="copyright-text">
-                <p>© 2025 <a href="#" target="_blank"> Solvior </a> All right reserved.</p>
+                <p>© 2025 <a href="#" target="_blank"> Kima Academy </a> All right reserved.</p>
               </div>
               <div class="copyright-menu">
                 <ul>
@@ -3089,6 +2452,7 @@
   <script src="assets/js/meanmenu.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/flowchart-modals.js"></script>
 </body>
 
 </html>
