@@ -23901,19 +23901,7 @@ blockquote cite::before {
 .h7-about-section .about-wrapper-four .sec-heading.style-4 .sub-title::before {
   display: none;
 }
-.h7-about-section .about-wrapper-four .about-images-group-three {
-  max-width: 645px;
-}
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .h7-about-section .about-wrapper-four .about-images-group-three {
-    min-height: 630px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .h7-about-section .about-wrapper-four .about-images-group-three {
-    min-height: 630px;
-  }
-}
+
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .h7-about-section .about-wrapper-four .about-images-group-three {
     width: 100%;
@@ -23932,7 +23920,6 @@ blockquote cite::before {
   }
 }
 .h7-about-section .about-float-area {
-  position: absolute;
   inset-inline-end: 0;
   bottom: -40px;
   display: -webkit-box;

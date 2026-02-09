@@ -1,69 +1,251 @@
+.kima-register-elm {
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fe 0%, #ffffff 50%, #f0f4ff 100%);
+  overflow: hidden;
+}
+
+.kima-register-elm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.kima-register-elm::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 .kima-register-elm .sec-heading .sub-title {
-  background: transparent;
+  background: linear-gradient(135deg, var(--tj-color-theme-primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.kima-register-elm .sec-title {
+  position: relative;
+  display: inline-block;
+}
+
+.kima-register-elm .sec-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tj-color-theme-primary), transparent);
+  border-radius: 2px;
 }
 
 .kima-register-item {
+  width: 100%;
   margin-bottom: 0;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.kima-register-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tj-color-theme-primary), #8b5cf6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kima-register-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.kima-register-item:hover::before {
+  transform: scaleX(1);
 }
 
 .kima-register-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
   color: var(--tj-color-theme-primary);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.kima-register-item:hover .kima-register-icon {
+  background: linear-gradient(135deg, var(--tj-color-theme-primary), #8b5cf6);
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
 }
 
 .kima-register-label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--tj-color-heading-primary);
-  font-weight: 600;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.kima-register-item:hover .kima-register-label {
+  color: var(--tj-color-theme-primary);
 }
 
 .kima-register-line {
-  width: 66%;
-  max-width: 120px;
-  margin: 0 0 0.75rem;
+  width: 60px;
+  margin: 0 0 1rem;
   border: 0;
-  border-top: 2px solid var(--tj-color-theme-primary);
-  opacity: 0.9;
+  border-top: 3px solid var(--tj-color-theme-primary);
+  opacity: 1;
+  transition: width 0.3s ease;
+}
+
+.kima-register-item:hover .kima-register-line {
+  width: 80px;
 }
 
 .kima-register-text {
   color: var(--tj-color-text-body);
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 0.5rem;
+}
+
+.kima-register-text strong {
+  color: var(--tj-color-theme-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .kima-register-tagline {
   color: var(--tj-color-text-body);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+  border-left: 4px solid var(--tj-color-theme-primary);
+  border-radius: 8px;
+  font-style: italic;
 }
 
 .kima-register-cta {
-  padding: 2rem;
-  background: var(--tj-color-theme-bg);
-  border: 1px solid var(--tj-color-border-2);
-  border-radius: 8px;
+  height: fit-content;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fe 100%);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.kima-register-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.kima-register-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(99, 102, 241, 0.2);
+  border-color: var(--tj-color-theme-primary);
 }
 
 .kima-register-cta-label {
   font-size: 0.9rem;
   color: var(--tj-color-theme-primary);
-  font-weight: 600;
-  margin: 0 0 0.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .kima-register-cta-title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--tj-color-heading-primary);
-  line-height: 1.35;
-  margin: 0;
+  line-height: 1.4;
+  margin: 0 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kima-register-cta .tj-primary-btn {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.kima-register-cta .tj-primary-btn:hover {
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .kima-register-elm::before,
+  .kima-register-elm::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .kima-register-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .kima-register-cta {
+    padding: 2rem;
+  }
 }

@@ -1,0 +1,85 @@
+/* Outcomes & ELM Section Styles */
+.kima-gain-elm-about {
+  position: relative;
+}
+
+.kima-outcomes-image {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.kima-outcomes-image img {
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kima-outcomes-image:hover img {
+  transform: scale(1.05);
+}
+
+.kima-outcomes-content {
+  padding: 0;
+}
+
+.kima-outcomes-content h3 {
+  color: #0b1220;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.kima-outcomes-content p {
+  color: #5b667a;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+  /* Images appear before text on mobile with reduced height */
+  .kima-outcomes-image {
+    margin-bottom: 1.5rem;
+  }
+  
+  .kima-outcomes-image img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .kima-outcomes-content h3 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* On desktop, images constrained to text height */
+  .kima-outcomes-image {
+    max-height: 230px;
+  }
+  
+  .kima-outcomes-image img {
+    height: 230px;
+  }
+  
+  .kima-outcomes-content {
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+  
+  .row .col-lg-6:last-child .kima-outcomes-content {
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Checklist compact spacing */
+.about-float-area {
+  margin: 1.5rem 0;
+}
+
+.about-float-area-left {
+  width: 100%;
+}
