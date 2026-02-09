@@ -1,0 +1,56 @@
+.kima-multitrack .sec-heading .sub-title {
+  display: none;
+}
+
+.kima-multitrack-card {
+  background: #e1e8f0;
+  border-radius: 12px;
+  padding: 28px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.kima-multitrack-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--tj-color-common-white);
+  border: 1px solid var(--tj-color-border-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kima-multitrack-icon span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kima-multitrack-icon i {
+  font-size: 1.75rem;
+  color: var(--tj-color-heading-primary);
+}
+
+.kima-multitrack-card .title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--tj-color-heading-primary);
+  margin: 1rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+.kima-multitrack-card .desc {
+  margin: 0;
+  color: var(--tj-color-text-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.kima-multitrack-card .desc p {
+  margin: 0;
+}

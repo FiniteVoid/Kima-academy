@@ -94,6 +94,7 @@ Description: Solvior - Business Consulting HTML Template
   --tj-color-heading-primary: #051229;
   --tj-color-text-body: #364052;
   --tj-color-text-body-2: #7e8590;
+  --tj-color-theme-accent: #599eff;
   --tj-color-theme-primary: #0075ff;
   --tj-color-theme-dark: #051229;
   --tj-color-theme-bg: #e1e8f0;
@@ -1235,7 +1236,7 @@ img {
   z-index: 97;
 }
 .tj-header-area.header-absolute {
-  background-color: #1a1a1a;
+  background-color: #f7f7f7;
   border-bottom: 1px solid var(--tj-color-border-1);
   position: absolute;
   z-index: 98;
@@ -1339,13 +1340,13 @@ img {
   opacity: 0.2;
 }
 .tj-header-area.header-2 .header_search {
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
 }
 .tj-header-area.header-2 .header_search i {
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
 }
 .tj-header-area.header-2 .menu_btn {
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
 }
 .tj-header-area.header-3 {
   border: none;
@@ -2055,7 +2056,7 @@ img {
 }
 .sidebar-menu .menu-btn {
   font-size: 16px;
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
   font-weight: var(--tj-fw-bold);
 }
 .sidebar-menu .menu-btn span {
@@ -23055,7 +23056,7 @@ blockquote cite::before {
   }
 }
 .tj-header-area.header-7 .mainmenu > ul > li > a {
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
 }
 .tj-header-area.header-7 .mainmenu > ul > li:hover > a, .tj-header-area.header-7 .mainmenu > ul > li.current-menu-ancestor > a {
   color: var(--tj-color-theme-primary);
@@ -23078,7 +23079,7 @@ blockquote cite::before {
   display: none;
 }
 .tj-header-area.header-7 .header_btn.tj-primary-btn {
-  background-color: rgba(247, 247, 247, 0.1);
+  background-color: hsla(220, 100%, 50%, 0.8);
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   -webkit-padding-end: 4.5px;
@@ -23125,7 +23126,7 @@ blockquote cite::before {
 .tj-header-area .menu_btn .line span {
   width: 100%;
   height: 1px;
-  background-color: var(--tj-color-common-white);
+  background-color: var(--tj-color-theme-accent);
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -23921,7 +23922,7 @@ blockquote cite::before {
 .h7-about-section .about-float-area {
   position: absolute;
   inset-inline-end: 0;
-  bottom: 0;
+  bottom: -40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

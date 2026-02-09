@@ -1,0 +1,69 @@
+.kima-register-elm .sec-heading .sub-title {
+  background: transparent;
+}
+
+.kima-register-item {
+  margin-bottom: 0;
+}
+
+.kima-register-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--tj-color-theme-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.kima-register-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tj-color-heading-primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.kima-register-line {
+  width: 66%;
+  max-width: 120px;
+  margin: 0 0 0.75rem;
+  border: 0;
+  border-top: 2px solid var(--tj-color-theme-primary);
+  opacity: 0.9;
+}
+
+.kima-register-text {
+  color: var(--tj-color-text-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.kima-register-tagline {
+  color: var(--tj-color-text-body);
+  font-size: 1rem;
+}
+
+.kima-register-cta {
+  padding: 2rem;
+  background: var(--tj-color-theme-bg);
+  border: 1px solid var(--tj-color-border-2);
+  border-radius: 8px;
+}
+
+.kima-register-cta-label {
+  font-size: 0.9rem;
+  color: var(--tj-color-theme-primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.kima-register-cta-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--tj-color-heading-primary);
+  line-height: 1.35;
+  margin: 0;
+}

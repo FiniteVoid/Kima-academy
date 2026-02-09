@@ -1,0 +1,254 @@
+.kima-hero {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f2747 0%, #1a3a5c 50%, #0f2747 100%);
+  padding: 5rem 0 4rem;
+}
+
+.kima-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.kima-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/hero/kima-hero-professional-leader.webp.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.kima-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(15, 39, 71, 0.95) 0%,
+      rgba(15, 39, 71, 0.85) 40%,
+      rgba(15, 39, 71, 0.6) 70%,
+      rgba(15, 39, 71, 0.4) 100%);
+  z-index: 1;
+}
+
+.kima-hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.1) 35px, rgba(255, 255, 255, 0.1) 70px);
+}
+
+.kima-hero-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.kima-hero-content {
+  max-width: 750px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kima-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.875rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: var(--tj-color-theme-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.kima-hero-badge i {
+  font-size: 1rem;
+}
+
+.kima-hero-title {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.03em;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.kima-hero-title-highlight {
+  background: linear-gradient(135deg, var(--tj-color-theme-primary) 0%, var(--tj-color-theme-accent) 50%, var(--tj-color-theme-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.kima-hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  line-height: 1.6;
+  margin: 0 0 1.75rem 0;
+  max-width: 650px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.kima-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.kima-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kima-hero-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.kima-hero-btn:hover::before {
+  opacity: 1;
+}
+
+.kima-hero-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.kima-hero-btn:hover i {
+  transform: translateX(4px);
+}
+
+.kima-btn-primary {
+  background: linear-gradient(135deg, var(--tj-color-theme-accent) 0%, var(--tj-color-theme-primary) 100%);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(209, 181, 156, 0.3);
+}
+
+.kima-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(209, 181, 156, 0.4);
+}
+
+.kima-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.kima-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.kima-hero-stats {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .kima-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .kima-hero-content {
+    max-width: 100%;
+  }
+
+  .kima-hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .kima-hero-stats {
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .kima-hero-stat-number {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .kima-hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .kima-hero-container {
+    padding: 0 1.25rem;
+  }
+
+  .kima-hero-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .kima-hero-title {
+    margin-bottom: 0.875rem;
+  }
+
+  .kima-hero-subtitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .kima-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .kima-hero-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.7rem 1.25rem;
+  }
+}

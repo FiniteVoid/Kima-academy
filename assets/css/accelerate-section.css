@@ -1,0 +1,23 @@
+.kima-accelerate-section .sec-heading-wrap {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.kima-accelerate-section .sec-heading {
+  display: inline-block;
+  text-align: center;
+}
+
+.kima-accelerate-section .sec-heading .sub-title {
+  display: none;
+}
+
+.kima-accelerate-section .sec-heading .sec-title {
+  font-size: clamp(28px, 4.5vw, 42px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

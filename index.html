@@ -16,7 +16,6 @@
 
   <!-- CSS here -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/solvior-icons.css" />
   <link rel="stylesheet" href="assets/css/swiper.min.css" />
@@ -26,6 +25,15 @@
   <link rel="stylesheet" href="assets/css/meanmenu.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/flowchart-enhanced.css" />
+  <link rel="stylesheet" href="assets/css/header-styles.css" />
+  <link rel="stylesheet" href="assets/css/hero-section.css" />
+  <link rel="stylesheet" href="assets/css/partners-marquee.css" />
+  <link rel="stylesheet" href="assets/css/pillars-section.css" />
+  <link rel="stylesheet" href="assets/css/program-modals.css" />
+  <link rel="stylesheet" href="assets/css/multitrack-section.css" />
+  <link rel="stylesheet" href="assets/css/accelerate-section.css" />
+  <link rel="stylesheet" href="assets/css/register-elm-section.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
 </head>
 
 <body>
@@ -44,43 +52,6 @@
   </div>
   <!-- Preloader End -->
 
-  <!-- start: Search Popup -->
-  <!-- <div class="search_popup">
-    <div class="search_close">
-      <button type="button" class="search_close_btn">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xxl-12">
-          <div class="tj_search_wrapper">
-            <div class="search_form">
-              <form action="#">
-                <div class="search_input">
-                  <h4 class="title">Search Blog, projects, Service or people.</h4>
-                  <div class="search-box">
-                    <input class="search-input-field" type="search" placeholder="Search here..." required="">
-                    <button type="submit">
-                      <i class="tji-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="search-popup-overlay"></div> -->
-  <!-- end: Search Popup -->
-
 
   <div class="body-overlay"></div>
 
@@ -98,12 +69,6 @@
           <button class="hamburger_close_btn hamburgerCloseBtn"><i class="fa-thin fa-times"></i></button>
         </div>
       </div>
-      <!-- <div class="hamburger_search">
-        <form method="get" action="#0">
-          <button type="submit"><i class="fal fa-search"></i></button>
-          <input type="search" autocomplete="off" name="s" value="" placeholder="Search here" />
-        </form>
-      </div> -->
 
       <div class="hamburger_menu">
         <div class="mobile_menu"></div>
@@ -116,10 +81,6 @@
             <span class="subtitle">Email</span>
             <div class="text"><a class="link" href="mailto:info@kima-academy.com">info@kima-academy.com</a></div>
           </div>
-          <!-- <div class="contact_item">
-            <span class="subtitle">Phone</span>
-            <div class="text"><a class="link" href="tel:000123456789">(000) 123 456 789</a></div>
-          </div> -->
           <div class="contact_item">
             <span class="subtitle">Location</span>
             <div class="text">Herzliya, Israel</div>
@@ -150,20 +111,6 @@
 
   <!-- start: Header Area -->
   <header class="tj-header-area header-2 header-7 header-absolute">
-    <style>
-      .tj-header-area .site-logo img {
-        filter: drop-shadow(0 2px 8px rgba(256, 256, 256, 0.3));
-        transition: filter 0.3s ease;
-      }
-
-      .tj-header-area .site-logo:hover img {
-        filter: drop-shadow(0 4px 12px rgba(256, 256, 256, 0.4));
-      }
-
-      .hamburger-area .hamburger_logo img {
-        filter: drop-shadow(0 2px 6px rgba(256, 256, 256, 0.25));
-      }
-    </style>
     <div class="header-bottom">
       <div class="container-fluid">
         <div class="row">
@@ -204,12 +151,6 @@
                     </div>
                   </div>
                 </a>
-                <!-- contact
-                <button class="header_search header_contact d-none d-lg-inline-flex">
-                  <span class="icon"><i class="tji-search"></i></span>
-
-                </button> -->
-
                 <!-- menu bar -->
                 <button class="menu_btn">
                   <span class="line">
@@ -241,262 +182,6 @@
   <main id="primary" class="site-main">
 
     <!-- start: Kima Academy Hero Section -->
-    <style>
-      .kima-hero {
-        position: relative;
-        min-height: auto;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        background: linear-gradient(135deg, #0f2747 0%, #1a3a5c 50%, #0f2747 100%);
-        padding: 5rem 0 4rem;
-      }
-
-      .kima-hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-      }
-
-      .kima-hero-bg::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: url('assets/images/hero/kima-hero-professional-leader.webp.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.15;
-        z-index: 0;
-      }
-
-      .kima-hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right,
-            rgba(15, 39, 71, 0.95) 0%,
-            rgba(15, 39, 71, 0.85) 40%,
-            rgba(15, 39, 71, 0.6) 70%,
-            rgba(15, 39, 71, 0.4) 100%);
-        z-index: 1;
-      }
-
-      .kima-hero-pattern {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        opacity: 0.03;
-        background-image:
-          repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.1) 35px, rgba(255, 255, 255, 0.1) 70px);
-      }
-
-      .kima-hero-container {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .kima-hero-content {
-        max-width: 750px;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .kima-hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.35rem 0.875rem;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50px;
-        color: #D1B59C;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease-out 0.2s both;
-      }
-
-      .kima-hero-badge i {
-        font-size: 1rem;
-      }
-
-      .kima-hero-title {
-        color: #fff;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        line-height: 1.15;
-        margin: 0 0 1rem 0;
-        letter-spacing: -0.03em;
-        animation: fadeInUp 1s ease-out 0.4s both;
-      }
-
-      .kima-hero-title-highlight {
-        background: linear-gradient(135deg, #D1B59C 0%, #F4E4D7 50%, #D1B59C 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: inline-block;
-      }
-
-      .kima-hero-subtitle {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-        line-height: 1.6;
-        margin: 0 0 1.75rem 0;
-        max-width: 650px;
-        animation: fadeInUp 1s ease-out 0.6s both;
-      }
-
-      .kima-hero-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.875rem;
-        animation: fadeInUp 1s ease-out 0.8s both;
-      }
-
-      .kima-hero-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.625rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .kima-hero-btn::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .kima-hero-btn:hover::before {
-        opacity: 1;
-      }
-
-      .kima-hero-btn i {
-        font-size: 1.1rem;
-        transition: transform 0.3s ease;
-      }
-
-      .kima-hero-btn:hover i {
-        transform: translateX(4px);
-      }
-
-      .kima-btn-primary {
-        background: linear-gradient(135deg, #D1B59C 0%, #C5A382 100%);
-        color: #fff;
-        box-shadow: 0 8px 24px rgba(209, 181, 156, 0.3);
-      }
-
-      .kima-btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(209, 181, 156, 0.4);
-      }
-
-      .kima-btn-secondary {
-        background: transparent;
-        color: #fff;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-      }
-
-      .kima-btn-secondary:hover {
-        border-color: rgba(255, 255, 255, 0.6);
-        background: rgba(255, 255, 255, 0.05);
-        transform: translateY(-2px);
-      }
-
-      .kima-hero-stats {
-        display: none;
-      }
-
-      @media (max-width: 991px) {
-        .kima-hero {
-          padding: 4rem 0 3rem;
-        }
-
-        .kima-hero-content {
-          max-width: 100%;
-        }
-
-        .kima-hero-buttons {
-          justify-content: flex-start;
-        }
-
-        .kima-hero-stats {
-          gap: 1.5rem;
-          margin-top: 2rem;
-          padding-top: 1.5rem;
-        }
-
-        .kima-hero-stat-number {
-          font-size: 1.75rem;
-        }
-      }
-
-      @media (max-width: 575px) {
-        .kima-hero {
-          padding: 3rem 0 2.5rem;
-        }
-
-        .kima-hero-container {
-          padding: 0 1.25rem;
-        }
-
-        .kima-hero-badge {
-          font-size: 0.7rem;
-          padding: 0.3rem 0.75rem;
-          margin-bottom: 0.75rem;
-        }
-
-        .kima-hero-title {
-          margin-bottom: 0.875rem;
-        }
-
-        .kima-hero-subtitle {
-          margin-bottom: 1.5rem;
-        }
-
-        .kima-hero-buttons {
-          flex-direction: column;
-          width: 100%;
-          gap: 0.75rem;
-        }
-
-        .kima-hero-btn {
-          width: 100%;
-          justify-content: center;
-          padding: 0.7rem 1.25rem;
-        }
-      }
-    </style>
     <section class="kima-hero">
       <div class="kima-hero-bg"></div>
       <div class="kima-hero-pattern"></div>
@@ -613,32 +298,6 @@
         </div>
       </div>
     </section>
-    <style>
-      .kima-partners-marquee {
-        background-color: #152753;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-
-      .kima-partners-marquee .brand-slider-1::before,
-      .kima-partners-marquee .brand-slider-1::after {
-        background-image: linear-gradient(90deg, #e8eef4 0%, rgba(232, 238, 244, 0) 100%);
-      }
-
-      .kima-partners-marquee .brand-slider-1::after {
-        background-image: linear-gradient(-90deg, #e8eef4 0%, rgba(232, 238, 244, 0) 100%);
-      }
-
-      .kima-partners-marquee .brand-logo {
-        background: transparent;
-      }
-
-      .kima-partners-marquee .brand-logo img {
-        max-height: 50px;
-        width: auto;
-        object-fit: contain;
-      }
-    </style>
     <!-- end: Partners logo marquee -->
 
     <!-- start: What You'll Gain & Become ELM Certified (About our company layout) -->
@@ -685,7 +344,7 @@
                         results, and managers into leaders who create lasting value.</p>
                     </div>
                   </div>
-                  <div class="about-statistics hover:shine">
+                  <!-- <div class="about-statistics hover:shine">
                     <img class="wow fadeInUp" data-wow-delay="0.9s" src="assets/images/about/kima-growth-stats.webp.png"
                       alt="Growth Statistics">
                     <div class="about-funfact">
@@ -697,7 +356,7 @@
                         <div><img src="./assets/images/icons/h7-line-chart.svg" alt=""></div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -708,246 +367,6 @@
     <!-- end: What You'll Gain & Become ELM Certified -->
 
     <!-- start: Kima Three Pillars + Modals -->
-    <style>
-      /* Palette lock: black / white / blue */
-      .kima-pillars-feature {
-        --kima-blue: #0061ff;
-        --kima-black: #0b1220;
-        --kima-white: #ffffff;
-        background: var(--kima-white);
-      }
-
-      .kima-pillars-feature .feature-item {
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .kima-pillars-feature .feature-item {
-        background: var(--kima-white);
-        border: 1px solid rgba(0, 0, 0, 0.10);
-        border-radius: 18px;
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
-      }
-
-      .kima-pillars-feature .feature-item:hover {
-        transform: translateY(-4px);
-        border-color: rgba(0, 97, 255, 0.35);
-        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.10);
-      }
-
-      .kima-pillars-feature .feature-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .kima-pillars-feature .feature-content .desc {
-        flex: 1;
-      }
-
-      .kima-pillars-feature .feature-content .title {
-        color: var(--kima-black);
-      }
-
-      .kima-pillars-feature .feature-content .desc p {
-        color: rgba(11, 18, 32, 0.75);
-      }
-
-      .kima-pillars-feature .kima-pillar-cta {
-        margin-top: auto;
-        padding-top: 1.25rem;
-      }
-
-      .kima-pillars-feature .feature-item.style-4 .feature-icon {
-        display: none !important;
-      }
-
-      .kima-pillars-feature .kima-card-icon {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: rgba(0, 97, 255, 0.12);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.25rem;
-        flex-shrink: 0;
-      }
-
-      @supports (background: color-mix(in srgb, red, red)) {
-        .kima-pillars-feature .kima-card-icon {
-          background: color-mix(in srgb, var(--kima-blue) 15%, transparent);
-        }
-      }
-
-      .kima-pillars-feature .kima-card-icon i {
-        font-size: 2rem;
-        color: var(--kima-blue);
-        line-height: 1;
-        display: inline-block;
-      }
-
-      /* Calm CEO quote block */
-      .kima-pillars-feature.section-space {
-        /* Reduce the large global `section-space` top padding to avoid excessive white space */
-        padding-top: 24px;
-      }
-
-      .kima-pillars-feature .kima-pillars-quote {
-        position: relative;
-        background: var(--kima-white);
-        border-radius: 18px;
-        padding: 28px 34px 30px;
-        max-width: 980px;
-        margin: 0 auto;
-        overflow: hidden;
-        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
-      }
-
-      .kima-pillars-feature .kima-pillars-divider {
-        border: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
-        width: min(980px, 100%);
-        margin: 18px auto 0;
-        opacity: 1;
-      }
-
-      /* Add breathing room before the "Three core pillars" title */
-      .kima-pillars-feature .sec-heading .sec-title {
-        margin-top: 18px;
-        color: var(--kima-black);
-      }
-
-
-      .kima-pillars-feature .kima-pillars-quote .kima-watermark {
-        font-size: clamp(1.5rem, 4vw, 3rem);
-        font-weight: 700;
-        color: rgba(0, 98, 255, 0.805);
-        letter-spacing: 0.02em;
-        line-height: 1.25;
-        text-align: center;
-        width: min(92%, 720px);
-        user-select: none;
-        text-transform: uppercase;
-      }
-
-      .kima-pillars-feature .kima-pillars-quote__content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .kima-pillars-feature .kima-pillars-quote__title {
-        margin: 0 0 8px;
-        letter-spacing: -0.02em;
-      }
-
-      .kima-pillars-feature .kima-pillars-quote__text {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.75;
-        color: var(--tj-color-text-body, #5b667a);
-      }
-
-      @media (max-width: 575px) {
-        .kima-pillars-feature.section-space {
-          padding-top: 16px;
-        }
-
-        .kima-pillars-feature .kima-pillars-quote {
-          padding: 20px 18px 18px;
-          border-radius: 16px;
-        }
-
-        .kima-pillars-feature .kima-pillars-quote__text {
-          font-size: 14px;
-        }
-
-        .kima-pillars-feature .kima-pillars-divider {
-          margin-top: 14px;
-        }
-
-        .kima-pillars-feature .sec-heading .sec-title {
-          margin-top: 14px;
-        }
-      }
-
-      .kima-modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        overflow-y: auto;
-      }
-
-      .kima-modal-overlay.is-open {
-        display: flex;
-      }
-
-      .kima-modal {
-        background: #fff;
-        border-radius: 12px;
-        max-width: 560px;
-        width: 100%;
-        max-height: 85vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-      }
-
-      .kima-modal-header {
-        padding: 1.5rem 1.75rem;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .kima-modal-header h3 {
-        margin: 0;
-        font-size: 1.35rem;
-        color: #1A1A1A;
-      }
-
-      .kima-modal-close {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #666;
-        padding: 0 0.25rem;
-        line-height: 1;
-      }
-
-      .kima-modal-close:hover {
-        color: #1A1A1A;
-      }
-
-      .kima-modal-body {
-        padding: 1.75rem;
-        color: #444;
-        line-height: 1.7;
-      }
-
-      .kima-modal-body h4 {
-        color: #1A1A1A;
-        margin: 1rem 0 0.5rem;
-        font-size: 1rem;
-      }
-
-      .kima-modal-body ul {
-        margin: 0.5rem 0 1rem;
-        padding-left: 1.25rem;
-      }
-
-      .kima-modal-body p {
-        margin: 0 0 0.75rem;
-      }
-    </style>
     <section class="tj-feature-section h7-feature-section section-space kima-pillars-feature">
       <div class="container">
         <div class="row">
@@ -1105,239 +524,6 @@
     <!-- end: Kima Program Flowchart -->
 
     <!-- Program Modals -->
-    <style>
-      .program-modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        overflow-y: auto;
-      }
-
-      .program-modal-overlay.is-open {
-        display: flex;
-      }
-
-      .program-modal {
-        background: #fff;
-        border-radius: 16px;
-        max-width: 900px;
-        width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        position: relative;
-      }
-
-      .program-modal-header {
-        padding: 2rem 2rem 1.5rem;
-        border-bottom: 2px solid #e9ecef;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        z-index: 1;
-        border-radius: 16px 16px 0 0;
-      }
-
-      .program-modal-header h3 {
-        margin: 0;
-        font-size: 1.75rem;
-        color: #0b1220;
-        font-weight: 700;
-      }
-
-      .program-modal-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        color: #666;
-        padding: 0;
-        line-height: 1;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.2s;
-      }
-
-      .program-modal-close:hover {
-        background: #f8f9fa;
-        color: #0b1220;
-      }
-
-      .program-modal-body {
-        padding: 2rem;
-      }
-
-      .program-pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-        margin-top: 24px;
-      }
-
-      .program-pricing-card {
-        background: #ffffff;
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 28px 24px;
-        transition: all 0.3s ease;
-      }
-
-      .program-pricing-card:hover {
-        border-color: #0061ff;
-        box-shadow: 0 8px 24px rgba(0, 97, 255, 0.1);
-        transform: translateY(-2px);
-      }
-
-      .program-pricing-card.featured {
-        border-color: #0061ff;
-        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-      }
-
-      .program-badge {
-        display: inline-block;
-        background: #0061ff;
-        color: #fff;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-bottom: 12px;
-      }
-
-      .program-pricing-card h4 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #0b1220;
-        margin: 0 0 12px;
-      }
-
-      .program-price {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #0061ff;
-        margin: 16px 0;
-      }
-
-      .program-price span {
-        font-size: 1rem;
-        color: #5b667a;
-        font-weight: 400;
-      }
-
-      .program-features {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-      }
-
-      .program-features li {
-        padding: 8px 0;
-        color: #5b667a;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .program-features li i {
-        color: #0061ff;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .program-apply-btn {
-        display: inline-block;
-        width: 100%;
-        padding: 12px 24px;
-        background: #0061ff;
-        color: #fff;
-        text-align: center;
-        border-radius: 8px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-
-      .program-apply-btn:hover {
-        background: #0051d5;
-        transform: translateY(-1px);
-      }
-
-      /* Accelerators Modal */
-      .accelerators-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 24px;
-        margin-top: 24px;
-      }
-
-      .accelerator-logo-card {
-        background: #f8f9fa;
-        border: 2px solid #e9ecef;
-        border-radius: 12px;
-        padding: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 120px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .accelerator-logo-card:hover {
-        border-color: #0061ff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 97, 255, 0.1);
-      }
-
-      .accelerator-logo-card img {
-        max-width: 100%;
-        max-height: 80px;
-        object-fit: contain;
-      }
-
-      @media (max-width: 767px) {
-        .program-modal {
-          margin: 1rem;
-        }
-
-        .program-modal-header {
-          padding: 1.5rem 1.5rem 1rem;
-        }
-
-        .program-modal-header h3 {
-          font-size: 1.35rem;
-          padding-right: 40px;
-        }
-
-        .program-modal-body {
-          padding: 1.5rem;
-        }
-
-        .program-pricing-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .accelerators-grid {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          gap: 16px;
-        }
-      }
-    </style>
 
     <!-- Modal 1: Industry Expert to Executive -->
     <div id="program-modal-1" class="program-modal-overlay">
@@ -1751,13 +937,6 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="sec-heading h7-section-heading style-4">
-              <h2 class="sec-title text-anim">A multi-track Approach to Leadership Excellence</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row rg-30 mt-4">
-          <div class="col-lg-4 col-md-6 d-flex">
             <div class="kima-multitrack-card wow fadeInUp w-100" data-wow-delay="0.1s">
               <div class="kima-multitrack-icon"><span><i class="tji-performance"></i></span></div>
               <h4 class="title">Intensive Leadership Sessions</h4>
@@ -1766,22 +945,35 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row rg-30 mt-4">
+          <div class="col-lg-4 col-md-6 d-flex">
+            <div class="kima-multitrack-card wow fadeInUp w-100" data-wow-delay="0.1s">
+              <div class="kima-multitrack-icon"><span><i class="tji-leadership"></i></span></div>
+              <h4 class="title">Conscious Leadership</h4>
+              <div class="desc">
+                <p class="mb-0">Mastering Ivy League methodologies and strategic business planning to build a solid
+                  leadership foundation.</p>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="kima-multitrack-card wow fadeInUp w-100" data-wow-delay="0.2s">
               <div class="kima-multitrack-icon"><span><i class="tji-strategic"></i></span></div>
-              <h4 class="title">Personal Mentoring Sessions</h4>
+              <h4 class="title">Value-Driven Entrepreneurship</h4>
               <div class="desc">
-                <p class="mb-0">8 Individual Trainings specifically designed for your unique professional challenges and
-                  aspirations.</p>
+                <p class="mb-0">Develop insight to identify unique opportunities and innovative solutions, thinking
+                  outside the box.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="kima-multitrack-card wow fadeInUp w-100" data-wow-delay="0.3s">
               <div class="kima-multitrack-icon"><span><i class="tji-results"></i></span></div>
-              <h4 class="title">LEM Certificate</h4>
+              <h4 class="title">Practical Application</h4>
               <div class="desc">
-                <p class="mb-0">Become LEM certified and a member of the KIMA LEM Leadership network.</p>
+                <p class="mb-0">Translating theory into practice through guided exercises, collaborative projects,
+                  and real-world challenges supported by mentors.</p>
               </div>
             </div>
           </div>
@@ -1799,64 +991,6 @@
         </div>
       </div>
     </section>
-    <style>
-      .kima-multitrack .sec-heading .sub-title {
-        display: none;
-      }
-
-      .kima-multitrack-card {
-        background: #e1e8f0;
-        border-radius: 12px;
-        padding: 28px 24px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-      }
-
-      .kima-multitrack-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        background: var(--tj-color-common-white);
-        border: 1px solid var(--tj-color-border-2);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .kima-multitrack-icon span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .kima-multitrack-icon i {
-        font-size: 1.75rem;
-        color: var(--tj-color-heading-primary);
-      }
-
-      .kima-multitrack-card .title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--tj-color-heading-primary);
-        margin: 1rem 0 0.5rem;
-        line-height: 1.3;
-      }
-
-      .kima-multitrack-card .desc {
-        margin: 0;
-        color: var(--tj-color-text-body);
-        font-size: 0.95rem;
-        line-height: 1.55;
-        flex: 1;
-      }
-
-      .kima-multitrack-card .desc p {
-        margin: 0;
-      }
-    </style>
     <!-- end: A multi-track Approach to Leadership Excellence -->
 
     <!-- start: Accelerate Your Ascent (service-style-3) -->
@@ -1943,31 +1077,6 @@
         </div>
       </div>
     </section>
-    <style>
-      .kima-accelerate-section .sec-heading-wrap {
-        margin-bottom: 50px;
-        text-align: center;
-      }
-
-      .kima-accelerate-section .sec-heading {
-        display: inline-block;
-        text-align: center;
-      }
-
-      .kima-accelerate-section .sec-heading .sub-title {
-        display: none;
-      }
-
-      .kima-accelerate-section .sec-heading .sec-title {
-        font-size: clamp(28px, 4.5vw, 42px);
-        line-height: 1.25;
-        letter-spacing: -0.025em;
-        max-width: 720px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-      }
-    </style>
     <!-- end: Accelerate Your Ascent -->
 
     <!-- start: Register for ELM-Mini Program -->
@@ -2038,211 +1147,7 @@
         </div>
       </div>
     </section>
-    <style>
-      .kima-register-elm .sec-heading .sub-title {
-        background: transparent;
-      }
-
-      .kima-register-item {
-        margin-bottom: 0;
-      }
-
-      .kima-register-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        color: var(--tj-color-theme-primary);
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .kima-register-label {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--tj-color-heading-primary);
-        font-weight: 600;
-        margin: 0 0 0.5rem;
-      }
-
-      .kima-register-line {
-        width: 66%;
-        max-width: 120px;
-        margin: 0 0 0.75rem;
-        border: 0;
-        border-top: 2px solid var(--tj-color-theme-primary);
-        opacity: 0.9;
-      }
-
-      .kima-register-text {
-        color: var(--tj-color-text-body);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-      }
-
-      .kima-register-tagline {
-        color: var(--tj-color-text-body);
-        font-size: 1rem;
-      }
-
-      .kima-register-cta {
-        padding: 2rem;
-        background: var(--tj-color-theme-bg);
-        border: 1px solid var(--tj-color-border-2);
-        border-radius: 8px;
-      }
-
-      .kima-register-cta-label {
-        font-size: 0.9rem;
-        color: var(--tj-color-theme-primary);
-        font-weight: 600;
-        margin: 0 0 0.5rem;
-      }
-
-      .kima-register-cta-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--tj-color-heading-primary);
-        line-height: 1.35;
-        margin: 0;
-      }
-    </style>
     <!-- end: Register for ELM-Mini Program -->
-
-    <!-- start: Faq Section -->
-    <!-- section class="h7-faq section-space">
-      <div class="container">
-        <div class="row flex-column-reverse flex-lg-row">
-          <div class="col-12  col-lg-8">
-
-
-            <div class="tj-faq ">
-              <div class="accordion tj-faq-style h7-faq-style" id="accordionExample">
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
-                  <h2 class="accordion-header ">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-1"
-                      aria-expanded="false">
-                      <span>01.</span> How do consultants add value to a business?
-                    </button>
-                  </h2>
-                  <div id="collapseOne-1" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>You might need a consultant if you're facing specifics challenges, such as
-                        stagnating our growth, operational inefficiencies, strategic issues, or if
-                        you lack expertise in certain areas. Consultants can also help if you need
-                        an objective perspective on your business businesses ever changing
-                        marketplace. We are committed to the delivering exceptional the value
-                        through strategic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
-                  <h2 class="accordion-header ">
-                    <button class="accordion-button " data-bs-toggle="collapse" data-bs-target="#collapseOne-2"
-                      aria-expanded="false">
-                      <span>02.</span> How do I know if my business needs a consultant?
-                    </button>
-                  </h2>
-                  <div id="collapseOne-2" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>You might need a consultant if you're facing specifics challenges, such as
-                        stagnating our growth, operational inefficiencies, strategic issues, or if
-                        you lack expertise in certain areas. Consultants can also help if you need
-                        an objective perspective on your business businesses ever changing
-                        marketplace. We are committed to the delivering exceptional the value
-                        through strategic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                  <h2 class="accordion-header ">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-3"
-                      aria-expanded="false">
-                      <span>03.</span> How do business consultants charge for their services?
-                    </button>
-                  </h2>
-                  <div id="collapseOne-3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>You might need a consultant if you're facing specifics challenges, such as
-                        stagnating our growth, operational inefficiencies, strategic issues, or if
-                        you lack expertise in certain areas. Consultants can also help if you need
-                        an objective perspective on your business businesses ever changing
-                        marketplace. We are committed to the delivering exceptional the value
-                        through strategic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.7s">
-                  <h2 class="accordion-header ">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-4"
-                      aria-expanded="false">
-                      <span>04.</span> Can a business consultant guarantee results?
-                    </button>
-                  </h2>
-                  <div id="collapseOne-4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>You might need a consultant if you're facing specifics challenges, such as
-                        stagnating our growth, operational inefficiencies, strategic issues, or if
-                        you lack expertise in certain areas. Consultants can also help if you need
-                        an objective perspective on your business businesses ever changing
-                        marketplace. We are committed to the delivering exceptional the value
-                        through strategic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.9s">
-                  <h2 class="accordion-header ">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne-5"
-                      aria-expanded="false">
-                      <span>05.</span> How can I measure the success of a consulting engagement?
-                    </button>
-                  </h2>
-                  <div id="collapseOne-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>You might need a consultant if you're facing specifics challenges, such as
-                        stagnating our growth, operational inefficiencies, strategic issues, or if
-                        you lack expertise in certain areas. Consultants can also help if you need
-                        an objective perspective on your business businesses ever changing
-                        marketplace. We are committed to the delivering exceptional the value
-                        through strategic.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-12  col-lg-4">
-
-
-            <div class="faq-banner">
-              <img src="./assets/images/faq/h7-faq-banner.png" alt="">
-
-
-              <div class="sec-heading h7-section-heading style-4">
-
-
-                <h2 class="sec-title text-anim">Questions and answers...</h2>
-
-
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-      </div>
-    </section -->
-    <!-- end: Faq Section -->
 
   </main>
 
@@ -2281,13 +1186,6 @@
               <div class="h7-infos-single-common h7-infos-single-divider">
                 <div class="line"></div>
               </div>
-              <!-- <div class="h7-infos-single infos-right">
-                <div class="infos-item">
-                  <span>Headquarters - USA</span>
-                  <p>993 Renner Burg, West Rond, MT 94251-030</p>
-                  <a href="tel:1009544-7818">+1 (009) 544-7818</a>
-                </div>
-              </div> -->
             </div>
           </div>
 
@@ -2319,55 +1217,10 @@
           </div>
           <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
             <div class="footer-widget footer1-col-2 h7-footer-widget-2 widget_nav_menu">
-              <!-- <div class="footer-title">
-                <h4 class="title">Resourses</h4>
-              </div> -->
-              <!-- <div class="widget-menu">
-                <ul>
-                  <li><a href="contact.html">Contact us</a></li>
-                  <li><a href="contact.html">Privacy policy</a></li>
-                  <li><a href="about.html">Recognitions</a></li>
-                  <li><a href="careers.html">Careers <span>New</span></a></li>
-                  <li><a href="blog-grid.html">Blog</a></li>
-                  <li><a href="team.html">Feedback</a></li>
-                  <li><a href="contact.html">Error 404</a></li>
-                </ul>
-              </div> -->
             </div>
           </div>
           <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-            <!-- <div class="footer-widget footer1-col-3 h7-footer-widget-3 widget_nav_menu">
-              <div class="footer-title">
-                <h4 class="title">Services</h4>
-              </div>
-              <div class="widget-menu">
-                <ul>
-                  <li><a href="service-details.html">Strategic planning</a></li>
-                  <li><a href="service-details.html">Market research</a></li>
-                  <li><a href="service-details.html">Business process</a></li>
-                  <li><a href="service-details.html">Financial management</a></li>
-                  <li><a href="service-details.html">Change management</a></li>
-                  <li><a href="service-details.html">IT consulting</a></li>
-                  <li><a href="service-details.html">Leadership </a></li>
-                </ul>
-              </div>
-            </div> -->
           </div>
-          <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div class="footer-widget footer1-col-4 footer-newsletter-form h7-footer-newsletter-form">
-              <div class="newsletter-title">
-                <h3 class="title">Subscribe to our newsletter</h3>
-              </div>
-              <div class="newsletter-form">
-                <form>
-                  <div class="form-input">
-                    <input type="email" id="email" name="email" placeholder="Enter email" required="">
-                    <button class="tj-footer-input-btn"><i class="fa-solid fa-paper-plane"></i></button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
 
