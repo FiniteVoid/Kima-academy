@@ -2157,7 +2157,7 @@ img {
 }
 
 .tj-header-area.header-1 .menu_btn .cubes span, .tj-header-area.header-2 .menu_btn .cubes span, .tj-header-area.header-duplicate .menu_btn .cubes span {
-  border-color: var(--tj-color-common-white);
+  border-color: var(--tj-color-theme-accent);
 }
 .tj-header-area.header-1 .menu_btn .cubes span:nth-child(2), .tj-header-area.header-2 .menu_btn .cubes span:nth-child(2), .tj-header-area.header-duplicate .menu_btn .cubes span:nth-child(2) {
   -webkit-box-shadow: inset 0 0 0 2px var(--tj-color-common-white);
@@ -3064,14 +3064,20 @@ img {
   -webkit-backdrop-filter: blur(37px);
           backdrop-filter: blur(37px);
 }
-.hamburger_wrapper {
-  position: relative;
+
+.hamburger_wrapper_inner{
   padding: 45px 45px 90px 45px;
   overflow: auto;
   height: 100%;
 }
+
+.hamburger_wrapper {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+}
 @media (max-width: 575px) {
-  .hamburger_wrapper {
+  .hamburger_wrapper_inner {
     padding: 40px 20px 60px 20px;
   }
 }
@@ -3082,7 +3088,7 @@ img {
   display: inline-block;
   font-size: 35px;
   line-height: 1;
-  color: var(--tj-color-common-white);
+  color: var(--tj-color-theme-accent);
 }
 @media (max-width: 575px) {
   .hamburger_close_btn {
@@ -8435,10 +8441,10 @@ a.ui-button:active {
 }
 @media (max-width: 575px) {
   .brand-slider-1::before {
-    width: 150px;
+    width: 80px;
   }
   .brand-slider-1::after {
-    width: 150px;
+    width: 80px;
   }
 }
 
@@ -21192,6 +21198,12 @@ blockquote cite::before {
   .testimonial-item.style-6 .testimonial-content .desc {
     font-size: 16px;
   }
+}
+
+.swiper-slide .brand-logo{
+  scale:2.0;
+  /* Add white drop shadow for greater visibiity */
+  filter: drop-shadow(0,0,4px white);
 }
 
 .swiper_navigations.style-6 .navigation {

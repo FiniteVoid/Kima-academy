@@ -17,12 +17,13 @@
 .kima-hero-bg::before {
   content: '';
   position: absolute;
+  top:8rem;
   inset: 0;
-  background-image: url('assets/images/hero/kima-hero-professional-leader.webp.png');
+  background-image: url('../images/hero/kima-hero-professional-leader.webp.png');
   background-size: cover;
-  background-position: center;
+  background-position: 0px -150px;
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.28;
   z-index: 0;
 }
 

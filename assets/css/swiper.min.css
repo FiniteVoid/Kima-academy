@@ -31,6 +31,10 @@
 .swiper-vertical > .swiper-wrapper {
     flex-direction: column;
 }
+.brand-slider-1{
+    background-color: #ffffff77;
+}
+
 .swiper-wrapper {
     position: relative;
     width: 100%;
