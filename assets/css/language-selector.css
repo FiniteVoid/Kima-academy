@@ -1,0 +1,164 @@
+/* Kima Academy Language Selector Dropdown Styles */
+
+.kima-language-selector {
+  position: relative;
+  display: inline-flex;
+  margin-right: 1rem;
+  z-index: 100;
+}
+
+.lang-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(5, 18, 41, 0.8);
+  border: 1px solid rgba(0, 117, 255, 0.5);
+  color: #599eff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lang-dropdown-btn:hover {
+  background: rgba(5, 18, 41, 0.95);
+  border-color: #0075ff;
+  color: #f7f7f7;
+}
+
+.lang-current {
+  min-width: 28px;
+  text-align: center;
+}
+
+.lang-dropdown-btn i:last-child {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.lang-dropdown-btn[aria-expanded="true"] i:last-child {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.lang-dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: #0b1220;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background: #f5f5f5;
+}
+
+.lang-option.active {
+  background: #0075ff;
+  color: #fff;
+}
+
+.lang-flag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.lang-name {
+  flex: 1;
+}
+
+.lang-code {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.lang-option.active .lang-code {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* RTL Support */
+[dir="rtl"] .kima-language-selector {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .lang-option {
+  text-align: right;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .kima-language-selector {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  
+  .lang-dropdown-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+  
+  .lang-dropdown-menu {
+    min-width: 160px;
+  }
+  
+  .lang-option {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .lang-dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+  
+  [dir="rtl"] .lang-dropdown-menu {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* Accessibility - Keyboard Focus */
+.lang-dropdown-btn:focus-visible,
+.lang-option:focus-visible {
+  outline: 2px solid #0075ff;
+  outline-offset: 2px;
+}

@@ -1,59 +1,393 @@
-/* New Hero Section with Dark Blue Background & White Curves Overlay */
-.kima-hero-new {
+/* Kima Hero Section V2 - Modern Design with Huge Background Text */
+.kima-hero-v2 {
   position: relative;
-  min-height: auto;
-  display: flex;
-  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1929 0%, #0f2035 50%, #0a1929 100%);
   overflow: hidden;
-  background: linear-gradient(135deg, #0f2747 0%, #1a3a5c 50%, #0f2747 100%);
-  padding: 5rem 0 0rem;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 0 0;
 }
 
-/* White Curves Overlay - Alpha'd */
-.kima-hero-curves-bg {
+/* Huge Background Text */
+.kima-hero-bg-text {
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: -10px;
   left: 50%;
-  z-index: 0;
-  background-image: url('../images/hero/curves-x.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.95;
-}
-
-/* Grid Layout */
-.kima-hero-grid {
-  position: relative;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 14vw, 11rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
   z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Main Container */
+.kima-hero-v2-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 40% 60%;
   gap: 2rem;
-  align-items: center;
-  min-height: auto;
-}
-
-/* Left Section - Direct Content */
-.kima-hero-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.kima-hero-card {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-  max-width: 450px;
+  align-items: flex-end;
   width: 100%;
-  text-align: center;
-  animation: fadeInUp 0.8s ease-out;
 }
 
+/* Professional Woman Image */
+.kima-hero-image-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.kima-hero-professional-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  min-height: 700px;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 25px 70px rgba(0, 0, 0, 0.7));
+  margin-bottom: 0;
+  display: block;
+}
+
+/* Content Wrapper */
+.kima-hero-content-wrapper {
+  position: relative;
+  z-index: 4;
+  color: #fff;
+  padding-bottom: 80px;
+  align-self: center;
+}
+
+/* Social Proof Badge */
+.kima-hero-social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  padding: 6px 18px 6px 6px;
+  border-radius: 50px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.kima-hero-avatars {
+  display: flex;
+}
+
+.kima-hero-avatars img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #0a1929;
+  margin-left: -10px;
+  object-fit: cover;
+}
+
+.kima-hero-avatars img:first-child {
+  margin-left: 0;
+}
+
+.kima-hero-join-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.5px;
+}
+
+/* Main Headline */
+.kima-hero-headline {
+  font-size: clamp(2.35rem, 4.8vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 28px;
+  letter-spacing: -0.025em;
+}
+
+.kima-hero-headline-accent {
+  display: block;
+  background: linear-gradient(135deg, var(--tj-color-theme-primary) 0%, var(--tj-color-theme-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 10px;
+}
+
+/* Description */
+.kima-hero-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 36px;
+  max-width: 580px;
+  font-weight: 400;
+}
+
+/* CTA Buttons */
+.kima-hero-cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.kima-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.kima-cta-btn i {
+  font-size: 18px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kima-cta-btn:hover i {
+  transform: translate X(5px);
+}
+
+.kima-cta-primary {
+  background: linear-gradient(135deg, var(--tj-color-theme-primary) 0%, var(--tj-color-theme-accent) 100%);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(209, 181, 156, 0.4);
+}
+
+.kima-cta-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(209, 181, 156, 0.5);
+  color: #fff;
+}
+
+.kima-cta-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.kima-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.15);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Large Tablet (1200px and below) */
+@media (max-width: 1200px) {
+  .kima-hero-bg-text {
+    font-size: clamp(3.5rem, 11vw, 9rem);
+    top: 10%;
+  }
+  
+  .kima-hero-v2-container {
+    grid-template-columns: 42% 58%;
+    gap: 1.5rem;
+  }
+  
+  .kima-hero-professional-image {
+    max-width: 480px;
+    min-height: 620px;
+  }
+  
+  .kima-hero-content-wrapper {
+    padding-bottom: 70px;
+  }
+}
+
+/* Tablet (991px and below) */
+@media (max-width: 991px) {
+  .kima-hero-v2 {
+    min-height: auto;
+    padding: 100px 0 0;
+    align-items: center;
+  }
+  
+  .kima-hero-bg-text {
+    font-size: clamp(3rem, 9vw, 7rem);
+    top: 8%;
+  }
+  
+  .kima-hero-v2-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .kima-hero-image-wrapper {
+    order: 2;
+    justify-content: center;
+    margin-top: -40px;
+  }
+  
+  .kima-hero-professional-image {
+    max-width: 420px;
+    min-height: 560px;
+  }
+  
+  .kima-hero-content-wrapper {
+    order: 1;
+    padding-bottom: 0;
+    padding-top: 60px;
+  }
+  
+  .kima-hero-social-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .kima-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .kima-hero-cta-buttons {
+    justify-content: center;
+  }
+}
+
+/* Small Tablet / Large Mobile (768px and below) */
+@media (max-width: 768px) {
+  .kima-hero-v2 {
+    padding: 90px 0 0;
+  }
+  
+  .kima-hero-bg-text {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    top: 6%;
+  }
+  
+  .kima-hero-professional-image {
+    max-width: 360px;
+    min-height: 490px;
+  }
+  
+  .kima-hero-content-wrapper {
+    padding-top: 50px;
+  }
+  
+  .kima-hero-headline {
+    font-size: clamp(2rem, 6.5vw, 2.75rem);
+  }
+  
+  .kima-hero-description {
+    font-size: 16px;
+  }
+}
+
+/* Mobile (575px and below) */
+@media (max-width: 575px) {
+  .kima-hero-v2 {
+    padding: 80px 0 0;
+  }
+  
+  .kima-hero-bg-text {
+    font-size: clamp(2rem, 7vw, 4.5rem);
+    letter-spacing: -0.01em;
+    top: 5%;
+  }
+  
+  .kima-hero-v2-container {
+    padding: 0 1.25rem;
+    gap: 0;
+  }
+  
+  .kima-hero-image-wrapper {
+    margin-top: -30px;
+  }
+  
+  .kima-hero-professional-image {
+    max-width: 300px;
+    min-height: 420px;
+  }
+  
+  .kima-hero-content-wrapper {
+    padding-top: 40px;
+  }
+  
+  .kima-hero-social-badge {
+    padding: 5px 16px 5px 5px;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  
+  .kima-hero-avatars img {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .kima-hero-join-count {
+    font-size: 13px;
+  }
+  
+  .kima-hero-headline {
+    font-size: 1.90rem;
+    margin-bottom: 22px;
+  }
+  
+  .kima-hero-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .kima-hero-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .kima-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 26px;
+  }
+}
+
+/* Extra Small Mobile (400px and below) */
+@media (max-width: 400px) {
+  .kima-hero-bg-text {
+    font-size: 2.25rem;
+    top: 4%;
+  }
+  
+  .kima-hero-professional-image {
+    max-width: 260px;
+    min-height: 370px;
+  }
+  
+  .kima-hero-headline {
+    font-size: 1.7rem;
+  }
+}
+
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -65,82 +399,10 @@
   }
 }
 
-.kima-hero-logo {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  margin-bottom: 1rem;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) 
-          drop-shadow(0 0 40px rgba(255, 255, 255, 0.3))
-          drop-shadow(0 0 60px rgba(255, 255, 255, 0.15));
-}
-
-.kima-hero-tagline {
-  font-size: clamp(1.45rem, 3.2vw, 2.45rem);
-  line-height: 1.4;
-  text-transform: capitalize;
-  color: #f7f7f7;
-  margin: 0 0 1.5rem 0;
-  font-weight: 800;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.kima-hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 2.25rem;
-  background: linear-gradient(135deg, var(--tj-color-theme-accent) 0%, var(--tj-color-theme-primary) 100%);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(209, 181, 156, 0.3);
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-}
-
-.kima-hero-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(209, 181, 156, 0.4);
-  color: #fff;
-}
-
-.kima-hero-cta i {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.kima-hero-cta:hover i {
-  transform: translateX(5px);
-}
-
-/* Right Section - Corporate Leaders (Up Front) */
-.kima-hero-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.kima-hero-leaders {
-  width: 100%;
-  scale: 1.2;
-  translate: 0 -15px;
-  max-width: 550px;
-  height: auto;
-  animation: fadeInRight 1s ease-out;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-}
-
-@keyframes fadeInRight {
+@keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -148,103 +410,36 @@
   }
 }
 
-/* Tablet Styles */
-@media (max-width: 991px) {
-  .kima-hero-new {
-    min-height: auto;
-    padding: 4.5rem 0 2rem;
+@keyframes fadeInBg {
+  from {
+    opacity: 0;
   }
-
-  .kima-hero-grid {
-    gap: 1.5rem;
-    min-height: auto;
-  }
-
-  .kima-hero-card {
-    padding: 0;
-  }
-
-  .kima-hero-logo {
-    max-width: 260px;
-  }
-
-  .kima-hero-leaders {
-    max-width: 420px;
+  to {
+    opacity: 1;
   }
 }
 
-/* Mobile Styles - Stack Vertically with Rotated Curves */
-@media (max-width: 768px) {
-  .kima-hero-new {
-    min-height: auto;
-    padding: 5rem 0 2rem;
-  }
-
-  /* Show curves only on right/bottom 50% */
-  .kima-hero-curves-bg {
-    transform: rotate(90deg);
-    transform-origin: center center;
-    width: 100vw;
-    height: 50vh;
-    left: 0;
-    top: 45vw;
-  }
-
-  /* Stack layout */
-  .kima-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    min-height: auto;
-  }
-
-  .kima-hero-card {
-    padding: 0;
-    max-width: 100%;
-  }
-
-  .kima-hero-logo {
-    max-width: 280px;
-    margin-bottom: 0.875rem;
-  }
-
-  .kima-hero-tagline {
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .kima-hero-cta {
-    padding: 0.8rem 1.875rem;
-    font-size: 0.95rem;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .kima-hero-leaders {
-    max-width: 100%;
-  }
+/* Apply animations on load */
+.kima-hero-bg-text {
+  animation: fadeInBg 1.2s ease-out 0.1s both;
 }
 
-@media (max-width: 575px) {
-  .kima-hero-new {
-    padding: 4.5rem 0 0;
-  }
+.kima-hero-professional-image {
+  animation: fadeInLeft 1s ease-out 0.3s both;
+}
 
-  .kima-hero-card {
-    padding: 0;
-  }
+.kima-hero-social-badge {
+  animation: fadeInUp 0.9s ease-out 0.5s both;
+}
 
-  .kima-hero-logo {
-    max-width: 240px;
-    margin-bottom: 0.75rem;
-  }
+.kima-hero-headline {
+  animation: fadeInUp 0.9s ease-out 0.6s both;
+}
 
-  .kima-hero-tagline {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
+.kima-hero-description {
+  animation: fadeInUp 0.9s ease-out 0.7s both;
+}
 
-  .kima-hero-cta {
-    padding: 0.75rem 1.65rem;
-    font-size: 0.9rem;
-  }
+.kima-hero-cta-buttons {
+  animation: fadeInUp 0.9s ease-out 0.8s both;
 }
