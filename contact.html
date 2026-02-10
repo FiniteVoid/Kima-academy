@@ -28,6 +28,50 @@
    <link rel="stylesheet" href="assets/css/hero-section.css" />
    <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
    <link rel="stylesheet" href="assets/css/language-selector.css" />
+   <style>
+      /* Footer menu link styling */
+      .footer-menu-links {
+         padding-left: 0;
+         list-style: none;
+      }
+
+      .footer-menu-links li {
+         margin-bottom: 10px;
+      }
+
+      .footer-menu-links li a {
+         color: rgba(255, 255, 255, 0.85);
+         text-decoration: none;
+         transition: color 0.3s ease;
+         display: inline-block;
+      }
+
+      .footer-menu-links li a:hover {
+         color: #D1B59C;
+         text-decoration: none;
+      }
+
+      /* Footer contact info styling */
+      .footer-contact-info p {
+         color: rgba(255, 255, 255, 0.85);
+      }
+
+      .footer-contact-info a {
+         color: rgba(255, 255, 255, 0.85);
+         text-decoration: none;
+         transition: color 0.3s ease;
+      }
+
+      .footer-contact-info a:hover {
+         color: #D1B59C;
+      }
+
+      @media (max-width: 767px) {
+         .footer-menu-links {
+            padding-left: 0 !important;
+         }
+      }
+   </style>
 </head>
 
 <body>
@@ -320,7 +364,7 @@
       <!-- end: Contact Form & Map Section -->
 
       <!-- start: Contact Info Section -->
-      <section class="tj-contact-area section-bottom-space">
+      <!-- <section class="tj-contact-area section-bottom-space">
          <div class="container">
             <div class="row">
                <div class="col-12">
@@ -379,64 +423,31 @@
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- end: Contact Info Section -->
    </main>
 
    <!-- start: Footer Area -->
    <footer class="tj-footer-area h7-footer">
 
-      <div class="h7-footer-shape"></div>
       <div class="h7-footer-overlay"></div>
 
-      <div class="container">
-         <div class="row">
-            <div class="col-12">
-               <div class="h6-footer-widget h7-footer-widget">
-                  <div class="footer-contact-infos h7-footer-contact-infos">
-                     <div class="h7-infos-single h7-infos-single-common h7-infos-single-action">
-                        <div class="infos-item">
-                           <div class="infos-item-left">
-                              <p data-i18n="footer.work_together">Lets work together?</p>
-                              <h3 class="info-title" data-i18n="footer.call_kima">Call Kima Academy Now</h3>
-                           </div>
-                           <div> <a class="info-call" href="tel:+972-9-9544-7818"><i class="tji-phone"></i></a></div>
-                        </div>
-                     </div>
-                     <div class="h7-infos-single-common h7-infos-single-divider">
-                        <div class="line"></div>
-                     </div>
-                     <div class="h7-infos-single h7-infos-single-common  infos-left">
-
-                        <div class="infos-item">
-                           <span data-i18n="footer.operations">Operations - Israel</span>
-                           <p data-i18n="footer.address">Suite 452 8082 Boner Parge, Herzliya, Israel</p>
-                           <a href="tel:+972-9-9544-7818">+972-9-954-7818</a>
-                        </div>
-                     </div>
-                     <div class="h7-infos-single-common h7-infos-single-divider">
-                        <div class="line"></div>
-                     </div>
-                  </div>
-               </div>
-
-            </div>
-         </div>
-      </div>
       <div class="footer-top-area h7-footer-top fix">
          <div class="container">
             <div class="row ">
                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="footer-widget footer1-col-1 ">
-                     <div class="footer-title">
-                        <h4 class="title" data-i18n="footer.company_title">Our company</h4>
+                  <div class="footer-widget footer1-col-1">
+                     <div class="footer-logo mb-4">
+                        <a href="index.html">
+                           <img src="assets/images/logos/academy_small.png" alt="Kima Academy Logo"
+                              style="max-width: 180px; filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));">
+                        </a>
                      </div>
-                     <p class="desc" data-i18n="footer.company_desc">
-                        Our mission is to empowers businesses off our all size too thrive in an businesses ever changing
-                        marketplaces.
+                     <p class="desc">
+                        Transforming corporate professionals into visionary leaders through proven Entrepreneurial
+                        Leadership Management programs.
                      </p>
                      <div class="footer-social h7-footer-social">
-
                         <ul>
                            <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
                            <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
@@ -448,9 +459,43 @@
                </div>
                <div class="col-xl-3 col-lg-2 col-md-6 col-sm-6">
                   <div class="footer-widget footer1-col-2 h7-footer-widget-2 widget_nav_menu">
+                     <div class="footer-title">
+                        <h4 class="title">Quick Links</h4>
+                     </div>
+                     <ul class="menu footer-menu-links">
+                        <li><a href="index.html">Academy</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                     </ul>
                   </div>
                </div>
-               <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <div class="footer-widget widget_nav_menu">
+                     <div class="footer-title">
+                        <h4 class="title">Resources</h4>
+                     </div>
+                     <ul class="menu footer-menu-links">
+                        <li><a href="index.html">Leadership Programs</a></li>
+                        <li><a href="index.html">ELM Mini Program</a></li>
+                        <li><a href="contact.html">Get Started</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <div class="footer-widget">
+                     <div class="footer-title">
+                        <h4 class="title">Get in Touch</h4>
+                     </div>
+                     <div class="footer-contact-info">
+                        <p class="mb-2">
+                           <i class="fa-regular fa-envelope" style="margin-right: 8px;"></i>
+                           <a href="mailto:info@kima-academy.com">info@kima-academy.com</a>
+                        </p>
+                        <p class="mb-2">
+                           <i class="fa-regular fa-location-dot" style="margin-right: 8px;"></i>
+                           <span>Herzliya, Israel</span>
+                        </p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
