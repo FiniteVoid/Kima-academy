@@ -22,7 +22,7 @@
 }
 
 .kima-watermark-text {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   color: #0061ff;
   letter-spacing: -0.02em;

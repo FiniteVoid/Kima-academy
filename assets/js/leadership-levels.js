@@ -17,6 +17,15 @@
         $('.level-item').removeClass('active');
         $('.level-details-content').removeClass('active');
 
+        // Retrigger animation on panel
+        const panel = $('.level-details-panel');
+        panel.css('animation', 'none');
+
+        // Force reflow to restart animation
+        void panel[0].offsetHeight;
+
+        panel.css('animation', '');
+
         // Add active class to clicked item
         $(`.level-item[data-level="${levelNum}"]`).addClass('active');
         $(`.level-details-content[data-level-details="${levelNum}"]`).addClass('active');

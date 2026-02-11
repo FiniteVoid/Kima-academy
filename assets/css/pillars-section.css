@@ -1,36 +1,176 @@
 /* Palette lock: black / white / blue */
 .kima-pillars-feature {
   --kima-blue: #0061ff;
+  --kima-cyan: #00d4ff;
   --kima-black: #0b1220;
   --kima-white: #ffffff;
-  background: linear-gradient(135deg, #0f2747 0%, #1a3a5c 50%, #0f2747 100%);
+  --kima-gold: #D1B59C;
+  background: 
+    linear-gradient(135deg, rgba(15, 39, 71, 0.85) 0%, rgba(26, 58, 92, 0.85) 50%, rgba(15, 39, 71, 0.85) 100%),
+    url('../images/bg/pillars-section-bg.png') center center / cover;
   position: relative;
+  overflow: hidden;
+}
+
+/* Abstract Pillar Silhouettes Background */
+.kima-pillars-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(255,255,255,0.03) 20%, rgba(255,255,255,0.03) 80%, transparent 80%),
+    repeating-linear-gradient(90deg, rgba(0, 97, 255, 0.04) 0px, transparent 2px, transparent 100px);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.kima-pillars-feature .container {
+  position: relative;
+  z-index: 1;
 }
 
 .kima-pillars-feature .feature-item {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  
+  /* Prevent flash on load */
+  opacity: 0;
+  
+  /* Simplified Pillar Effect */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Beveled Edges */
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%,
+    0 calc(100% - 8px), 0 8px
+  );
+  
+  /* Animated Gradient Border */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  
+  /* Simplified Transform for Performance */
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  
+  /* Enhanced Shadow for Depth */
+  box-shadow: 
+    0 14px 34px rgba(0, 0, 0, 0.25),
+    0 4px 12px rgba(0, 97, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-.kima-pillars-feature .feature-item {
-  background: var(--kima-white);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 18px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+/* Animated Gradient Border Effect */
+.kima-pillars-feature .feature-item::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    var(--kima-blue) 0%,
+    var(--kima-cyan) 50%,
+    var(--kima-gold) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%,
+    0 calc(100% - 8px), 0 8px
+  );
+  animation: borderShift 4s linear infinite;
+  animation-play-state: paused;
 }
 
+@keyframes borderShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Large Number Badge */
+.kima-pillars-feature .feature-item::after {
+  content: attr(data-pillar-number);
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(0, 97, 255, 0.08);
+  z-index: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State - Simplified */
 .kima-pillars-feature .feature-item:hover {
-  transform: translateY(-4px);
-  border-color: rgba(209, 181, 156, 0.5);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+  transform: translateY(-12px);
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    0 8px 24px rgba(0, 97, 255, 0.4),
+    0 0 40px rgba(0, 212, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.kima-pillars-feature .feature-item:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.kima-pillars-feature .feature-item:hover::after {
+  color: rgba(0, 97, 255, 0.15);
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Staggered Construction Animation - Optimized */
+@keyframes pillarConstruct {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.kima-pillars-feature .feature-item.pillar-animate {
+  animation: pillarConstruct 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .kima-pillars-feature .feature-content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
 }
 
 .kima-pillars-feature .feature-content .desc {
@@ -39,10 +179,18 @@
 
 .kima-pillars-feature .feature-content .title {
   color: var(--kima-black);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.kima-pillars-feature .feature-item:hover .feature-content .title {
+  color: var(--kima-blue);
 }
 
 .kima-pillars-feature .feature-content .desc p {
   color: rgba(11, 18, 32, 0.75);
+  line-height: 1.6;
 }
 
 .kima-pillars-feature .kima-pillar-cta {
@@ -54,22 +202,40 @@
   display: none !important;
 }
 
+/* Enhanced Icon */
 .kima-pillars-feature .kima-card-icon {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(0, 97, 255, 0.12);
+  background: linear-gradient(135deg, rgba(0, 97, 255, 0.15), rgba(0, 212, 255, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
   flex-shrink: 0;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 97, 255, 0.2);
 }
 
-@supports (background: color-mix(in srgb, red, red)) {
-  .kima-pillars-feature .kima-card-icon {
-    background: color-mix(in srgb, var(--kima-blue) 15%, transparent);
-  }
+.kima-pillars-feature .kima-card-icon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--kima-cyan), var(--kima-blue));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.kima-pillars-feature .feature-item:hover .kima-card-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 97, 255, 0.4), 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.kima-pillars-feature .feature-item:hover .kima-card-icon::before {
+  opacity: 1;
 }
 
 .kima-pillars-feature .kima-card-icon i {
@@ -77,22 +243,55 @@
   color: var(--kima-blue);
   line-height: 1;
   display: inline-block;
+  transition: all 0.4s ease;
 }
 
-/* Section heading styles for blue background */
+.kima-pillars-feature .feature-item:hover .kima-card-icon i {
+  color: var(--kima-cyan);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+/* Section heading styles */
 .kima-pillars-feature .sec-heading .sec-title {
   color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Update description text for blue background */
 .kima-pillars-feature .sec-heading .desc p {
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* CTA Button Enhancement */
+.kima-pillars-feature .blog-btn-2 {
+  transition: all 0.3s ease;
+}
+
+.kima-pillars-feature .feature-item:hover .blog-btn-2 {
+  color: var(--kima-blue);
+}
+
+.kima-pillars-feature .feature-item:hover .blog-btn-2 .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .kima-pillars-feature .feature-item::after {
+    font-size: 80px;
+    top: -5px;
+    right: 15px;
+  }
+}
+
 @media (max-width: 575px) {
-  /* Mobile responsive styles */
   .kima-pillars-feature .feature-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .kima-pillars-feature .feature-item::after {
+    font-size: 60px;
+    top: 0;
+    right: 10px;
   }
 }
 

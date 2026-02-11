@@ -9,6 +9,7 @@
 
 .leadership-levels-container {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-top: 3rem;
@@ -117,25 +118,26 @@
 /* Right Column - Level Details */
 .level-details-panel {
   background: white;
+  height: fit-content;
   border-radius: 16px;
   padding: 0;
   position: sticky;
   top: 2rem;
-  min-height: 500px;
   box-shadow: 0 16px 48px rgba(0, 97, 255, 0.15);
   overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeInUp 0.4s ease-out;
 }
 
 .level-details-content {
   display: none;
+  width: 100%;
 }
 
 .level-details-content.active {
   display: flex;
-  justify-content: space-between;
-  height: 100%;
   flex-direction: column;
-  animation: fadeInUp 0.4s ease-out;
 }
 
 @keyframes fadeInUp {
