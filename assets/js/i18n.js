@@ -40,7 +40,7 @@
                 "pillar2_desc": "Entrepreneurship is a mindset of creating value. Develop opportunity recognition and drive innovation in any context.",
                 "pillar3_title": "Professional Management",
                 "pillar3_desc": "Your vision means nothing if you can't communicate it. Perfect storytelling, persuasion, and executive presence.",
-                "learn_more": "Learn more"
+                "learn_more": "Enroll"
             },
             "outcomes": {
                 "heading": "The KIMA-ACADEMY ELM Promise",
@@ -114,7 +114,7 @@
                 "level6_subtitle": "Join Kima accelerators and partners",
                 "level6_desc": "Connect with our network of world-class accelerators and strategic partners to amplify your leadership journey.",
                 "level6_focus_title": "OUR PARTNERS",
-                "learn_more": "Learn More",
+                "learn_more": "Enroll",
                 "enroll_now": "Enroll now"
             },
             "accelerate": {
@@ -136,7 +136,7 @@
                 "section_desc": "Take the first step toward transforming your leadership journey. Fill out the form below to secure your spot in our Entrepreneurial Leadership Management program."
             },
             "register_elm": {
-                "section_title": "ELM - Mini Program",
+                "section_title": "ELM5 Becoming a Leader",
                 "section_desc": "Transform your leadership journey with our comprehensive mini program. Everything you need to accelerate your growth.",
                 "location_label": "Location",
                 "location_text": "Herzliya, an inspiring tech environment designed to foster creativity and focused learning",

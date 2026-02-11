@@ -41,15 +41,36 @@
   display: grid;
   gap: 30px;
   margin-top: 50px;
-  /* 2 columns layout - cleaner look */
+  /* Default: 2 columns layout - cleaner look */
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* Item 3 (middle one) spans 2 columns to fill the row */
-.elm-operating-item:nth-child(3) {
+/* Default layout: Item 3 (middle one) spans 2 columns to fill the row */
+.elm-operating-grid .elm-operating-item:nth-child(3) {
   grid-column: 1 / -1;
   max-width: 50%;
   margin: 0 auto;
+}
+
+/* Alternative 3+2 layout for elm-mini-program page */
+.elm-operating-grid.layout-3-2 {
+  /* 6 columns layout to allow 3 items (2 cols each) in first row, 2 items (3 cols each) in second row */
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* 3+2 layout: First 3 items take 2 columns each */
+.elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(1),
+.elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(2),
+.elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(3) {
+  grid-column: span 2;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* 3+2 layout: Items 4 and 5 (second row) - each takes 3 columns to fill the row */
+.elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(4),
+.elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(5) {
+  grid-column: span 3;
 }
 
 .elm-operating-item {
@@ -132,12 +153,25 @@
 
 /* Medium Tablets (991px) */
 @media (max-width: 991px) {
-  .elm-operating-grid {
+  .elm-operating-grid,
+  .elm-operating-grid.layout-3-2 {
     gap: 25px;
+    /* Switch to 2 columns on medium tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  .elm-operating-item:nth-child(3) {
+  /* Reset grid positioning for medium screens - default layout */
+  .elm-operating-grid .elm-operating-item:nth-child(3) {
     max-width: 55%;
+  }
+  
+  /* Reset grid positioning for medium screens - 3+2 layout */
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(1),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(2),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(3),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(4),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(5) {
+    grid-column: span 1;
   }
   
   .elm-operating-item {
@@ -160,14 +194,24 @@
     margin-bottom: 40px;
   }
   
-  .elm-operating-grid {
+  .elm-operating-grid,
+  .elm-operating-grid.layout-3-2 {
     grid-template-columns: 1fr;
     gap: 22px;
   }
   
-  /* Reset centering for single column */
-  .elm-operating-item:nth-child(3) {
+  /* Reset centering for single column - default layout */
+  .elm-operating-grid .elm-operating-item:nth-child(3) {
     max-width: 100%;
+    grid-column: auto;
+  }
+  
+  /* Reset for single column - 3+2 layout */
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(1),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(2),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(3),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(4),
+  .elm-operating-grid.layout-3-2 .elm-operating-item:nth-child(5) {
     grid-column: auto;
   }
   
