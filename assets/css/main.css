@@ -33787,6 +33787,18 @@ blockquote cite::before {
       -ms-transform: translateY(-3px);
           transform: translateY(-3px);
 }
+
+.enroll-form{
+  width:48rem;
+  padding: 3rem; 
+}
+
+@media (max-width: 768px) {
+  .enroll-form{
+    width:100%;
+    padding:0.5rem;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .h10-team-item .team-content {
     display: -webkit-box;

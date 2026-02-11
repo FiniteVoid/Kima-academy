@@ -94,6 +94,19 @@
             }
         });
 
+        // Close modal on CTA button click (mobile only, except for level 5 which redirects)
+        $(document).on('click', '#level-mobile-modal .level-details-btn', function (e) {
+            const href = $(this).attr('href');
+            // Only close modal if it's scrolling to #enroll-now (not redirecting to another page)
+            // Level 5 has href="elm-mini-program.html" so it won't close the modal (it redirects)
+            if (href && href.startsWith('#') && isMobile()) {
+                // Small delay to allow smooth scroll to start
+                setTimeout(function () {
+                    closeLevelModal();
+                }, 300);
+            }
+        });
+
         // Handle window resize
         let resizeTimer;
         $(window).on('resize', function () {
